@@ -2,7 +2,7 @@
 # Ruby Solo Project  (Money Tracker Option)
 ## [Title-Placeholder]
 
-[title] is an app which allows a user to track their spending habits. The app is
+[title] is an app which allows a user to track their spending habits.
 
 
 ### Target Demographic (TD)
@@ -29,9 +29,38 @@ Proto Persona Davina:
 * Create, Read, Update, Delete Merchants
 * Create, Read, Update, Delete Tags
 
-### Lessons Learned
+## Order of Approach
+
+* Read the instructions :white_check_box:
+* Read the instructions again...yes. Because how much time will you waste if you misinterpret. :white_check_box:
+* Create folder layout and headers - COMMIT!
+* Create user persona -> user journey : This will feed you the data and methods to satisfy user needs.:white_check_box:
+* Create wireframe sketch to ensure that views cater to above :white_check_box:
+* Decide on what logic you'll need, plan classes, attributes, methods, tests :white_check_box:
+* Recheck that plan matches user needs FOR THIS ITERATION
+* Begin build - start with concretes then work your way up: SQL runner>Database Schema>DB>seed data - get these working first.
+* The controller defines the routes that will be taken upon HTTP method
+* Require Sinatra and relevant tools in your controller file
+* Create your specs file for testing model logic - start with has attr? etc. then shoot for logic -remember to cover negative cases.
+* Create your logic file in model folder - keep your variable names tight
+* Test that these work first of all
+* Create your view folder
+* Layout is your template housing for all other page eventualities
+* Create other page eventualities
+* Style it up with CSS and polish
+
+### Notes
+
+* We were explicitly told to develop iteratively for this one to reflect real life situations. Resist the urge to plan for future states, build MVP functionality, then extension functionality, then plan and build bells and whistles.
 
 ### Files
+
+* consider_the_user.md - notes on UX and the application of.
+* whole_brief.md - Whole project brief
+* money_tracker.md - Specific project requirements
+* readme.md - does what it says on the tin
+* furious_styles.css - Styling for the web app -  if I'm lucky.
+* merchant_spec - test specification for merchant model class
 
 
 > "Money be green!"
