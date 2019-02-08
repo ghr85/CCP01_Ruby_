@@ -25,7 +25,7 @@ end
 post '/tags' do #submits data from new tag page to DB
   tag = Tag.new(params)
   tag.save
-  erb ( :"tags/index" )
+  redirect to("/tags")
 end
 
 post '/tags/:id/delete' do #Deletes singular instance from database

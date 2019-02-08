@@ -46,7 +46,7 @@ Proto Persona Davina:
 * Test that these work first of all :white_check_mark:
 * Create your view folder :white_check_mark:
 * Layout is your template housing for all other page eventualities :white_check_mark:
-* Create other page eventualities
+* Create other page eventualities :white_check_mark:
 * Repeat for next iterative cycle, focus on functionality before moving to CSS
 * Style it up with CSS and polish
 
@@ -57,6 +57,7 @@ Proto Persona Davina:
 * Again, time wasted on a requirements issue. Other controllers need to be required from main controller to work!
 * Remember that the 'name' attribute on a form points directly to the database mapping.
 * You can't use an anchor to generate a post action(without JS)
+* Requiring css requires you to declare a type attribute in link
 
 ### Files
 

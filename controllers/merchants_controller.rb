@@ -25,7 +25,7 @@ end
 post '/merchants' do #submits data from new merchant page to DB
   merchant = Merchant.new(params)
   merchant.save
-  erb ( :"merchants/index" )
+  redirect to("/merchants") 
 end
 
 post '/merchants/:id/delete' do #Deletes singular instance from database
