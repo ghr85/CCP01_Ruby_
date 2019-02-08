@@ -39,13 +39,13 @@ Proto Persona Davina:
 * Decide on what logic you'll need, plan classes, attributes, methods, tests :white_check_mark:
 * Recheck that plan matches user needs FOR THIS ITERATION :white_check_mark:
 * Begin build - start with concretes then work your way up: SQL runner>Database Schema>DB>seed data - get these working first.:white_check_mark:
-* The controller defines the routes that will be taken upon HTTP method
-* Require Sinatra and relevant tools in your controller file
-* Create your specs file for testing model logic - start with has attr? etc. then shoot for logic -remember to cover negative cases.
-* Create your logic file in model folder - keep your variable names tight
-* Test that these work first of all
-* Create your view folder
-* Layout is your template housing for all other page eventualities
+* The controller defines the routes that will be taken upon HTTP method :white_check_mark:
+* Require Sinatra and relevant tools in your controller file :white_check_mark:
+* Create your specs file for testing model logic - start with has attr? etc. then shoot for logic -remember to cover negative cases. :white_check_mark:
+* Create your logic file in model folder - keep your variable names tight :white_check_mark:
+* Test that these work first of all :white_check_mark:
+* Create your view folder :white_check_mark:
+* Layout is your template housing for all other page eventualities :white_check_mark:
 * Create other page eventualities
 * Repeat for next iterative cycle, focus on functionality before moving to CSS
 * Style it up with CSS and polish
