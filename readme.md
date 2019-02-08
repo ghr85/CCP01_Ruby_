@@ -54,6 +54,7 @@ Proto Persona Davina:
 
 * We were explicitly told to develop iteratively for this one to reflect real life situations. Resist the urge to plan for future states, build MVP functionality, then extension functionality, then plan and build bells and whistles.
 * Remember that require is used for library items, require relative is needed for project files.
+* Again, time wasted on a requirements issue. Other controlers need to be required from main controller to work!
 
 ### Files
 
