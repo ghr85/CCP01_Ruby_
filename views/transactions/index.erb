@@ -3,3 +3,30 @@
   <h2 class ='page-intent'>Overview</h2>
   <p class ='page-element'>Transactions for review</p>
 </div>
+
+<table>
+  <tr class='header'>
+    <th>Transaction ID</th>
+    <th>Merchant Name</th>
+    <th>Tag Name</th>
+    <th>Amount</th>
+    <th></th>
+    <th></th>
+  </tr>
+  <%for transaction in @transactions%>
+  <tr class='transaction_rows'>
+ <td value='<%=transaction.id%>'><%=transaction.id%></td>
+ <td value='<%=transaction.merchant_id_int%>'><%=transaction.merchant_id_int%></td>
+ <td value='<%=transaction.tag_id_int%>'><%=transaction.tag_id_int%></td>
+ <td value='<%=transaction.amount_int%>'><%=transaction.amount_int%></td>
+ <td value='edit'><form action="/transactions/<%=transaction.id%>/edit" method="post">
+   <input type="submit" value="Edit" />
+</form></td>
+ <td value='delete'>
+   <form action="/transactions/<%=transaction.id%>/delete" method="post">
+     <input type="submit" value="Delete" />
+  </form>
+</td>
+<%end%>
+</tr>
+</table>
