@@ -1,8 +1,8 @@
 # Codeclan Week 04 Day 04
 # Ruby Solo Project  (Money Tracker Option)
-## [Title-Placeholder]
+##  Rex Money Tracker
 
-[title] is an app which allows a user to track their spending habits.
+Rex is an app which allows a user to track their spending habits.
 
 
 ### Target Demographic (TD)
