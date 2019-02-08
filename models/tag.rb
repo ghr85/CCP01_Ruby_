@@ -1,6 +1,7 @@
 #Codeclan Ruby Project
 #Rex - Spending Tracker
 # Tag model classes
+
 require_relative('../db/sql_runner')
 require('pry')
 
