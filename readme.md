@@ -38,7 +38,7 @@ Proto Persona Davina:
 * Create wireframe sketch to ensure that views cater to above :white_check_mark:
 * Decide on what logic you'll need, plan classes, attributes, methods, tests :white_check_mark:
 * Recheck that plan matches user needs FOR THIS ITERATION :white_check_mark:
-* Begin build - start with concretes then work your way up: SQL runner>Database Schema>DB>seed data - get these working first.
+* Begin build - start with concretes then work your way up: SQL runner>Database Schema>DB>seed data - get these working first.:white_check_mark:
 * The controller defines the routes that will be taken upon HTTP method
 * Require Sinatra and relevant tools in your controller file
 * Create your specs file for testing model logic - start with has attr? etc. then shoot for logic -remember to cover negative cases.

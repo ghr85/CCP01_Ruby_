@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Rex - Expense Tracker</title>
+  <link href="https://fonts.googleapis.com/css?family=Cabin" rel="stylesheet">
+  <link rel='stylesheet' href='styles/furious_styles.css'>
+</head>
+<body>
+  <header>
+    <h1></
+  </header>
+  <nav>
+    <ul class='mainnav'>
+      <li class='mainnav-item'>
+        <a href='/'>Home</a>
+      </li>
+      <li class='mainnav-item'>
+        <a href='transactions/all'>Transactions</a>
+          <ul class='subnav'>
+              <li class='subnav-item'>
+                <a class ='sub-nav-link' href='transactions/new'>Create Transaction</a>
+              </li>
+              <li class='subnav-item'>
+                <a class ='sub-nav-link' href='transactions/all'>View Transactions</a>
+              </li>
+          </ul>
+      </li>
+      <li class='mainnav-item'>
+        <a href='tags/all'>Tags</a>
+        <ul class='subnav'>
+            <li class='subnav-item'>
+              <a class ='subnav-link' href='tags/new'>Create Tag</a>
+            </li>
+            <li class='subnav-item'>
+              <a class ='subnav-link' href='transactions/all'>View Tags</a>
+            </li>
+        </ul>
+      </li>
+      <li class='mainnav-item'>
+          <a href='merchants/all'>Merchants</a>
+          <ul class='subnav'>
+              <li class='subnav-item'>
+                <a class ='subnav-link' href='merchants/new'>Create Merchant</a>
+              </li>
+              <li class='subnav-item'>
+                <a class ='subnav-link' href='transactions/all'>View Merchants</a>
+              </li>
+          </ul>
+      </li>
+
+    </ul>
+  </nav>
+  <%= yield %>
+
+  <footer>
+    <div class='sum'>
+    </div>
+  </footer>
+</body>
+</html>
