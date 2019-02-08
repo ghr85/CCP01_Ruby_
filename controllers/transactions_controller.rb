@@ -1,6 +1,6 @@
 #Codeclan Ruby Project
 #Rex - Money Tracker
-#Main Controller HTTP Routing
+#Transactions Controller HTTP Routing
 
 #require libraries
 require('sinatra')
