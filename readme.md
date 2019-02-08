@@ -31,13 +31,13 @@ Proto Persona Davina:
 
 ## Order of Approach
 
-* Read the instructions :white_check_box:
-* Read the instructions again...yes. Because how much time will you waste if you misinterpret. :white_check_box:
+* Read the instructions :white_check_mark:
+* Read the instructions again...yes. Because how much time will you waste if you misinterpret. :white_check_mark:
 * Create folder layout and headers - COMMIT!
-* Create user persona -> user journey : This will feed you the data and methods to satisfy user needs.:white_check_box:
-* Create wireframe sketch to ensure that views cater to above :white_check_box:
-* Decide on what logic you'll need, plan classes, attributes, methods, tests :white_check_box:
-* Recheck that plan matches user needs FOR THIS ITERATION
+* Create user persona -> user journey : This will feed you the data and methods to satisfy user needs.:white_check_mark:
+* Create wireframe sketch to ensure that views cater to above :white_check_mark:
+* Decide on what logic you'll need, plan classes, attributes, methods, tests :white_check_mark:
+* Recheck that plan matches user needs FOR THIS ITERATION :white_check_mark:
 * Begin build - start with concretes then work your way up: SQL runner>Database Schema>DB>seed data - get these working first.
 * The controller defines the routes that will be taken upon HTTP method
 * Require Sinatra and relevant tools in your controller file
@@ -47,6 +47,7 @@ Proto Persona Davina:
 * Create your view folder
 * Layout is your template housing for all other page eventualities
 * Create other page eventualities
+* Repeat for next iterative cycle, focus on functionality before moving to CSS
 * Style it up with CSS and polish
 
 ### Notes
