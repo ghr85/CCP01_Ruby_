@@ -3,3 +3,29 @@
   <h2 class ='page-intent'>Overview</h2>
   <p class ='page-element'>Tags for review</p>
 </div>
+<table>
+  <tr class='header'>
+    <th>Tag Name</th>
+    <th>Tag ID</th>
+    <th></th>
+    <th></th>
+  </tr>
+  <%for tag in @tags%>
+  <tr>
+ <td value='<%=tag.tag_name_str%>'><%=tag.tag_name_str%></td>
+ <td value='<%=tag.id%>'><%=tag.id%></td>
+ <td value='edit'><form action="/tags/<%=tag.id%>/edit" method="post">
+   <input type="submit" value="Edit" />
+</form></td>
+ <td value='delete'>
+   <form action="/tags/<%=tag.id%>/delete" method="post">
+     <input type="submit" value="Delete" />
+  </form>
+</td>
+<%end%>
+</tr>
+</table>
+</div>
+
+<!-- <input type="image" id="image" alt="Login"
+       src="/media/examples/login-button.png"> Keep this for later-->

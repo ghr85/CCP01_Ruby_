@@ -56,6 +56,7 @@ Proto Persona Davina:
 * Remember that require is used for library items, require relative is needed for project files.
 * Again, time wasted on a requirements issue. Other controllers need to be required from main controller to work!
 * Remember that the 'name' attribute on a form points directly to the database mapping.
+* You can't use an anchor to generate a post action(without JS)
 
 ### Files
 
@@ -65,6 +66,7 @@ Proto Persona Davina:
 * readme.md - does what it says on the tin
 * furious_styles.css - Styling for the web app -  if I'm lucky.
 * merchant_spec - test specification for merchant model class
+
 
 
 > "Money be green!"
