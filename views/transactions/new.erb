@@ -2,4 +2,24 @@
   <h1 class ='page-title'> Transactions</h1>
   <h2 class ='page-intent'>Create</h2>
   <p class ='page-element'>Create Transaction</p>
+
+  <form method='post' action='/transactions'>
+    <label for='amount'>Amount:</label>
+    <input id='amount' type='number' name='amount_int'/>
+    <label for='merchant-select'>Select a merchant:</label>
+    <select id='merchant-select' name='merchant_id_int'>
+      <%@merchants.each do |merchant|%>
+     <option value='<%=merchant.id%>'><%=merchant.merchant_name_str%></option>
+ <%end%>
+    </select>
+    <label for='tag-select'>Select a tag:</label>
+    <select id='tag-select' name='tag_id_int'>
+      <%@tags.each do |tag|%>
+     <option value='<%=tag.id%>'><%=tag.tag_name_str%></option>
+ <%end%>
+    </select>
+    <input type='submit' value='Create Transaction'/>
+    <input type='reset' value='Clear Form'/>
+  </form>
+
 </div>

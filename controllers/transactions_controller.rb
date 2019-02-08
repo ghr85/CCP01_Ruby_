@@ -19,6 +19,9 @@ get '/transactions' do #retrieves the overall list of transaction
 end
 
 get '/transactions/new' do #retrieves the new form for creating transaction
+  @transactions = Transaction.all
+  @merchants = Merchant.all
+  @tags = Tag.all
   erb(:"transactions/new")
 end
 
