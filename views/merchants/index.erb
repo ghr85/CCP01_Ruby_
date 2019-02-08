@@ -2,4 +2,16 @@
   <h1 class ='page-title'>Merchants</h1>
   <h2 class ='page-intent'>Overview</h2>
   <p class ='page-element'>Merchants for review</p>
+  <table>
+    <tr class='header'>
+      <th>Merchant Name</th>
+      <th>Merchant ID</th>
+    </tr>
+    <%for merchant in @merchants%>
+    <tr>
+   <td value='<%=merchant.merchant_name_str%>'><%=merchant.merchant_name_str%></td>
+   <td value='<%=merchant.id%>'><%=merchant.id%></td>
+<%end%>
+</tr>
+  </table>
 </div>
