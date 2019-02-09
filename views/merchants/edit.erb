@@ -1,0 +1,15 @@
+<div class='page-content'>
+  <h1 class ='page-title'>Merchants</h1>
+  <h2 class ='page-intent'>Edit</h2>
+  <p class ='page-element'>Edit Merchant</p>
+  <hr/>
+  <p class ='page-element'>Please enter new details below:</p>
+  <form action='/merchants/edit' method="post">
+    <label for='merchant_id'>Merchant ID:</label>
+    <input id='merchant_id' readonly type='text' name='id' value='<%=@edit_merchant.id%>'/>
+    <label for='merchant_name'>Merchant Name:</label>
+    <input id='merchant_name' type='text' name='merchant_name_str' value='<%=@edit_merchant.merchant_name_str%>'/>
+    <input type='submit' value='Update Merchant'/>
+    <input type='reset' value='Clear'/>
+ </form>
+</div>

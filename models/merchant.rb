@@ -30,11 +30,11 @@ def update()
 
   sql = "UPDATE merchants SET
   (
-    merchant_name_str
+    merchant_name_str,id
   )
   =
   (
-    $1
+    $1,$2
   )
   WHERE id = $2"
   values = [@merchant_name_str,@id]

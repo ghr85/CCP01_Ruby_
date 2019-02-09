@@ -28,7 +28,7 @@ end
 post '/transactions' do #submits data from new transaction page to DB
   transaction = Transaction.new(params)
   transaction.save
-  erb ( :"transactions/index" )
+  redirect to("/transactions")
 end
 
 post '/transactions/:id/delete' do #Deletes singular instance from database

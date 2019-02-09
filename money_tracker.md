@@ -21,9 +21,9 @@ _As a user_ <br />
 _I want to be able to view accurate information about merchants I spend money at e.g. Tesco, Amazon, Scotrail_ <br />
 _So that I can keep track of where I have spent money_ <br />
 
-**Acceptance Criteria:** Users should be able to add new merchants to the list of merchants <br />
+**Acceptance Criteria:** Users should be able to add new merchants to the list of merchants <br />:white_check_mark:
 **Acceptance Criteria:** Users should be able to edit details of existing merchants in their list of merchants <br />
-**Acceptance Criteria:** Users should be able to delete merchants from their list of merchants <br />
+**Acceptance Criteria:** Users should be able to delete merchants from their list of merchants <br />:white_check_mark:
 
 ##### Manage Tags
 
@@ -31,9 +31,9 @@ _As a user_ <br />
 _I want to be able to view accurate information about what I spend my money on e.g. groceries, entertainment, transport_ <br />
 _So that I can keep track of how I spend my money_ <br />
 
-**Acceptance Criteria:** Users should be able to add new tags to the list of tags <br />
+**Acceptance Criteria:** Users should be able to add new tags to the list of tags <br />:white_check_mark:
 **Acceptance Criteria:** Users should be able to edit details of existing tags in their list of tags <br />
-**Acceptance Criteria:** Users should be able to delete tags from their list of tags <br />
+**Acceptance Criteria:** Users should be able to delete tags from their list of tags <br />:white_check_mark:
 
 ##### Manage Transactions
 
@@ -41,12 +41,12 @@ _As a user_ <br />
 _I want to be able to view accurate information about my transactions, keeping a running total_  <br />
 _So that I can keep track of my spending_ <br />
 
-**Acceptance Criteria:** Users should be able to create transactions <br />
-**Acceptance Criteria:** Users should be able to assign a tag  to a transaction <br />
-**Acceptance Criteria:** Users should be able to assign a merchants to a transaction <br />
-**Acceptance Criteria:** Users should be able to assign  an amount spent to each transaction <br />
+**Acceptance Criteria:** Users should be able to create transactions <br />:white_check_mark:
+**Acceptance Criteria:** Users should be able to assign a tag  to a transaction <br />:white_check_mark:
+**Acceptance Criteria:** Users should be able to assign a merchants to a transaction <br />:white_check_mark:
+**Acceptance Criteria:** Users should be able to assign  an amount spent to each transaction <br />:white_check_mark:
 **Acceptance Criteria:** Users should be able to edit transactions <br />
-**Acceptance Criteria:** Users should be able to delete transactions <br />
+**Acceptance Criteria:** Users should be able to delete transactions <br />:white_check_mark:
 
 ##### View Transactions
 
@@ -54,7 +54,7 @@ _As a user_ <br />
 _I want to be able to view all my transactions at once, along with a running total_ <br />
 _So that I can see the total amount of money I have currently spent_<br />
 
-**Acceptance Criteria:** Users should be able to see a view of all transactions, including tag, merchant, and amount for each transaction, along with a running total of the amount spent <br />
+**Acceptance Criteria:** Users should be able to see a view of all transactions, including tag, merchant, and amount for each transaction, along with a running total of the amount spent <br />:white_check_mark: 
 
 #### Possible Extensions (Create your own user stories for these)
 

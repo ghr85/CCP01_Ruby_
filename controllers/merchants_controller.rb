@@ -25,11 +25,21 @@ end
 post '/merchants' do #submits data from new merchant page to DB
   merchant = Merchant.new(params)
   merchant.save
-  redirect to("/merchants") 
+  redirect to("/merchants")
 end
 
 post '/merchants/:id/delete' do #Deletes singular instance from database
   Merchant.delete(params[:id])
   redirect to("/merchants") #redirects to route above ^
 end
-get
+
+get '/merchants/:id/edit' do #Edits singular instance from database
+   @edit_merchant = Merchant.find(params[:id])
+   erb(:"merchants/edit")
+end
+
+post '/merchants/edit' do #Edits singular instance from database
+  merchant = Merchant.new(params)
+  merchant.update()
+  redirect to("/merchants") #redirects to route above ^
+end
