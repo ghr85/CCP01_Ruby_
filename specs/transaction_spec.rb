@@ -1,5 +1,5 @@
 # Codeclan Project - Solo - Ruby
-#Sceficiations for testing transactions model
+# Specifications for testing transactions model
 
 require('minitest/autorun')
 require('minitest/rg')
@@ -33,7 +33,11 @@ def setup
       'merchant_id_int' => @test_merchant.id,
       'amount_int' => 14
       })
+end
 
+def teardown
+Tag.delete(@test_tag.id)
+Merchant.delete(@test_merchant.id)
 end
 
 def test_has_tag_id?
@@ -59,10 +63,9 @@ def test_tag?
   Transaction.delete(@test_transaction.id)
 end
 
-# def test_sum?
-#   assert_equal()
-#
-# end
+def test_sum?
+  assert_equal(134,Transaction.sum())
+end
 
 
 end #class end

@@ -94,5 +94,17 @@ def tag
  return tag
 end
 
+def self.sum
+  all_transaction = Transaction.all()
+  binding.pry
+  sum = 0
+  for transaction in all_transaction
+    sum += transaction.amount_int.to_i
+  end
+
+  return sum
+end
+
+
 
 end #class end
