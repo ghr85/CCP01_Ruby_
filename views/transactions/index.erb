@@ -3,7 +3,7 @@
   <h2 class ='page-intent'>Overview</h2>
   <p class ='page-element'>Transactions for review</p>
 </div>
-
+</p id='sum-value'><b>Current transaction balance: £<%=Transaction.sum%></b></p>
 <table>
   <tr class='header'>
     <th>Transaction ID</th>
@@ -18,7 +18,7 @@
  <td value='<%=transaction.id%>'><%=transaction.id%></td>
  <td value='<%=transaction.merchant_id_int%>'><%=transaction.merchant.merchant_name_str%></td>
  <td value='<%=transaction.tag_id_int%>'><%=transaction.tag.tag_name_str%></td>
- <td value='<%=transaction.amount_int%>'>£<%=transaction.amount_int%></td>
+ <td value='<%=transaction.amount_num%>'>£<%=transaction.amount_num%></td>
  <td value='edit'><form action="/transactions/<%=transaction.id%>/edit" method="get">
    <input type="submit" value="Edit" />
 </form></td>

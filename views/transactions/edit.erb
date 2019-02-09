@@ -8,7 +8,7 @@
     <label for='transaction_id'>Transaction ID:</label>
     <input id='transaction_id' readonly type='text' name='id' value='<%=@edit_transaction.id%>'/>
     <label for='transaction_amount'>Transaction Amount:</label>
-    <input id='transaction_amount' type='text' name='amount_int' value='<%=@edit_transaction.amount_int%>'/>
+    <input id='transaction_amount' type='text' name='amount_num' value='<%=@edit_transaction.amount_num%>'/>
     <label for='merchant-select'>Select a merchant:</label>
     <select id='merchant-select' name='merchant_id_int'>
       <%@merchants.each do |merchant|%>

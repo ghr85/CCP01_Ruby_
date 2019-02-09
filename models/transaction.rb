@@ -7,25 +7,25 @@ require('pry')
 
 class Transaction
 
-  attr_reader :tag_id_int, :merchant_id_int, :amount_int, :id
+  attr_reader :tag_id_int, :merchant_id_int, :amount_num, :id
 
 
 def initialize(options)
   @id = options['id'].to_i
   @tag_id_int = options['tag_id_int'].to_i
   @merchant_id_int = options['merchant_id_int'].to_i
-  @amount_int= options['amount_int']
+  @amount_num= options['amount_num']
 end
 
 def save
 sql = "INSERT INTO transactions(
 tag_id_int,
 merchant_id_int,
-amount_int
+amount_num
 ) VALUES (
   $1,$2,$3
   ) RETURNING *"
-values = [@tag_id_int,@merchant_id_int,@amount_int]
+values = [@tag_id_int,@merchant_id_int,@amount_num]
 transaction_obj = SqlRunner.run(sql,values)
 @id = transaction_obj.first['id'].to_i
 
@@ -37,7 +37,7 @@ def update() # Again with updating issue
   (
     tag_id_int,
     merchant_id_int,
-    amount_int,
+    amount_num,
     id
   )
   =
@@ -45,7 +45,7 @@ def update() # Again with updating issue
     $1,$2,$3,$4
   )
   WHERE id = $4"
-  values = [@tag_id_int,@merchant_id_int,@amount_int,@id]
+  values = [@tag_id_int,@merchant_id_int,@amount_num,@id]
   SqlRunner.run( sql, values )
 end
 
@@ -98,11 +98,11 @@ end
 def self.sum
   all_transaction = Transaction.all()
   # binding.pry
-  sum = 0
+  sum = 0.00
   for transaction in all_transaction
-    sum += transaction.amount_int.to_i
+    sum += transaction.amount_num.to_f
   end
-  return sum
+  return "%.2f" % sum #How does 
 end
 
 
