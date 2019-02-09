@@ -20,19 +20,20 @@ def setup
       'tag_name_str' => 'Food'
     }
   )
-  @test_tag.save()
+
   @test_merchant = Merchant.new(
     {
       'merchant_name_str' => 'Tesco'
     }
   )
+  @test_tag.save()
   @test_merchant.save()
   @test_transaction = Transaction.new({
       'tag_id_int' => @test_tag.id,
       'merchant_id_int' => @test_merchant.id,
       'amount_int' => 14
       })
-  @test_transaction.save()
+
 end
 
 def test_has_tag_id?
@@ -47,12 +48,21 @@ def test_has_amount_int?
 end
 
 def test_merchant?
+  @test_transaction.save()
     assert_equal('Tesco',@test_transaction.merchant.merchant_name_str)
+  Transaction.delete(@test_transaction.id)
 end
 
 def test_tag?
+  @test_transaction.save()
     assert_equal('Food',@test_transaction.tag.tag_name_str)
+  Transaction.delete(@test_transaction.id)
 end
+
+# def test_sum?
+#   assert_equal()
+#
+# end
 
 
 end #class end
