@@ -86,5 +86,13 @@ def merchant
  return merchant
 end
 
+def tag
+ sql = "SELECT * FROM tags WHERE id = $1"
+ values = [@tag_id_int]
+ result_hash = SqlRunner.run(sql,values).first
+ tag = Tag.new(result_hash)
+ return tag
+end
+
 
 end #class end

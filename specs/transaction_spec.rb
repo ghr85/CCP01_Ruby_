@@ -47,8 +47,12 @@ def test_has_amount_int?
 end
 
 def test_merchant?
-    @test_transaction.save()
     assert_equal('Tesco',@test_transaction.merchant.merchant_name_str)
 end
+
+def test_tag?
+    assert_equal('Food',@test_transaction.tag.tag_name_str)
+end
+
 
 end #class end

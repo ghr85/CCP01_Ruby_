@@ -58,6 +58,7 @@ Proto Persona Davina:
 * Remember that the 'name' attribute on a form points directly to the database mapping.
 * You can't use an anchor to generate a post action(without JS)
 * Requiring css requires you to declare a type attribute in link
+* Remember to create an object if you want to access the data, you're confusing a hash with an object that is (for the most part) a hash.
 
 ### Files
 
