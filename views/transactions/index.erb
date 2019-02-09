@@ -16,9 +16,9 @@
   <%for transaction in @transactions%>
   <tr class='transaction_rows'>
  <td value='<%=transaction.id%>'><%=transaction.id%></td>
- <td value='<%=transaction.merchant_id_int%>'><%=transaction.merchant_id_int%></td>
- <td value='<%=transaction.tag_id_int%>'><%=transaction.tag_id_int%></td>
- <td value='<%=transaction.amount_int%>'><%=transaction.amount_int%></td>
+ <td value='<%=transaction.merchant_id_int%>'><%=transaction.merchant.merchant_name_str%></td>
+ <td value='<%=transaction.tag_id_int%>'><%=transaction.tag.tag_name_str%></td>
+ <td value='<%=transaction.amount_int%>'>£<%=transaction.amount_int%></td>
  <td value='edit'><form action="/transactions/<%=transaction.id%>/edit" method="post">
    <input type="submit" value="Edit" />
 </form></td>
