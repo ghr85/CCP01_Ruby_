@@ -78,5 +78,13 @@ def self.find(id)
   return transaction
 end
 
+def merchant
+ sql = "SELECT * FROM merchants WHERE id = $1"
+ values = [@merchant_id_int]
+ result_hash = SqlRunner.run(sql,values).first
+ merchant = Merchant.new(result_hash)
+ return merchant
+end
+
 
 end #class end
