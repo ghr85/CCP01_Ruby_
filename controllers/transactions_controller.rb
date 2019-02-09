@@ -35,4 +35,16 @@ post '/transactions/:id/delete' do #Deletes singular instance from database
   Transaction.delete(params[:id])
   redirect to("/transactions")
 end
-get
+
+get '/transactions/:id/edit' do #Edit singular instance from database
+    @merchants = Merchant.all
+    @tags = Tag.all
+    @edit_transaction = Transaction.find(params[:id])
+    erb(:"transactions/edit")
+end
+
+post '/transactions/edit' do #Edits singular instance from database
+  transaction = Transaction.new(params)
+  transaction.update()
+  redirect to("/transactions") #redirects to route above ^
+end

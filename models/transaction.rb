@@ -31,17 +31,18 @@ transaction_obj = SqlRunner.run(sql,values)
 
 end
 
-def update()
+def update() # Again with updating issue
 
   sql = "UPDATE transactions SET
   (
     tag_id_int,
     merchant_id_int,
-    amount_int
+    amount_int,
+    id
   )
   =
   (
-    $1,$2,$3
+    $1,$2,$3,$4
   )
   WHERE id = $4"
   values = [@tag_id_int,@merchant_id_int,@amount_int,@id]

@@ -1,0 +1,27 @@
+<div class='page-content'>
+  <h1 class ='page-title'>Transactions</h1>
+  <h2 class ='page-intent'>Edit</h2>
+  <p class ='page-element'>Edit Transaction</p>
+  <hr/>
+  <p class ='page-element'>Please enter new details below:</p>
+  <form action='/transactions/edit' method="post">
+    <label for='transaction_id'>Transaction ID:</label>
+    <input id='transaction_id' readonly type='text' name='id' value='<%=@edit_transaction.id%>'/>
+    <label for='transaction_amount'>Transaction Amount:</label>
+    <input id='transaction_amount' type='text' name='amount_int' value='<%=@edit_transaction.amount_int%>'/>
+    <label for='merchant-select'>Select a merchant:</label>
+    <select id='merchant-select' name='merchant_id_int'>
+      <%@merchants.each do |merchant|%>
+      <option value='<%=merchant.id%>'><%=merchant.merchant_name_str%></option>
+      <%end%>
+    </select>
+    <label for='tag-select'>Select a tag:</label>
+    <select id='tag-select' name='tag_id_int'>
+      <%@tags.each do |tag|%>
+      <option value='<%=tag.id%>'><%=tag.tag_name_str%></option>
+      <%end%>
+    </select>
+    <input type='submit' value='Update Transaction'/>
+    <input type='reset' value='Clear'/>
+  </form>
+</div>
