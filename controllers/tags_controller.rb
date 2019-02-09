@@ -32,4 +32,14 @@ post '/tags/:id/delete' do #Deletes singular instance from database
   Tag.delete(params[:id])
   redirect to("/tags") #redirects to route above ^
 end
-get
+
+get '/tags/:id/edit' do #Edits singular instance from database
+   @edit_tag = Tag.find(params[:id])
+   erb(:"tags/edit")
+end
+
+post '/tags/edit' do #Edits singular instance from database
+  tag = Tag.new(params)
+  tag.update()
+  redirect to("/tags") #redirects to route above ^
+end

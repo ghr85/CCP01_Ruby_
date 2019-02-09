@@ -27,15 +27,15 @@ tag_obj = SqlRunner.run(sql,values)
 
 end
 
-def update()
+def update() #issue here with having to update ID? ERROR: source for a multiple-column UPDATE item must be a sub-SELECT or ROW() expression LINE 7: $1 ^ 
 
   sql = "UPDATE tags SET
   (
-    tag_name_str
+    tag_name_str,id
   )
   =
   (
-    $1
+    $1,$2
   )
   WHERE id = $2"
   values = [@tag_name_str,@id]

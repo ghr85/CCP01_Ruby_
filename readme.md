@@ -59,7 +59,8 @@ Proto Persona Davina:
 * You can't use an anchor to generate a post action(without JS)
 * Requiring css requires you to declare a type attribute in link
 * Remember to create an object if you want to access the data, you're confusing a hash with an object that is (for the most part) a hash.
-* If you can, delete test objects from DB to serve test purposes.
+* Delete test objects from DB to serve test purposes by using teardown.
+* Issues with Sinatra and updating - have to updated all columns despite ID being primary?
 
 ### Files
 
