@@ -74,6 +74,8 @@ _So that I can see the total amount of money I have currently spent_<br />
 
 * No way to filter or sort data - would this be done at SQL level or Ruby end? Hmmm...
 
+* There's no need for users to see IDs in the view. Get rid of that nonsense.
+
 
 
 

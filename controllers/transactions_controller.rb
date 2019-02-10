@@ -14,7 +14,8 @@ require_relative('../models/tag.rb')
 also_reload('../models/*')
 
 get '/transactions' do #retrieves the overall list of transaction
-  @transactions = Transaction.all
+  transactions = Transaction.all
+  @transactions = transactions.sort_by{|transaction| -transaction.id}
   erb ( :"transactions/index" )
 end
 
