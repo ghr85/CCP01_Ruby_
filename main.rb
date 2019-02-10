@@ -11,9 +11,11 @@ require('pry-byebug')
 require_relative('controllers/transactions_controller')
 require_relative('controllers/merchants_controller')
 require_relative('controllers/tags_controller')
+require_relative('models/quotes')
 
 also_reload('./models/*')
 
 get '/' do
+  @quote = Quote.all.sample
 erb(:index)
 end

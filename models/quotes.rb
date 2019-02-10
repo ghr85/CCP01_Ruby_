@@ -1,4 +1,6 @@
-quote_ary =[
+class Quote
+def self.all
+  return [
   "And baby when I tell ya the boy has got his own money, I mean the boy has got his own MONEY!",
   "I had the most absurd nightmare. I was poor and no one liked me.",
   "Show me the MONEY!",
@@ -24,4 +26,5 @@ quote_ary =[
     "All the pieces matter.",
     "It’s all in the game ..."]
 
-    p quote_ary.sample
+end
+end
