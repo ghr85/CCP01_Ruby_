@@ -64,7 +64,7 @@ def test_tag?
 end
 
 def test_sum?
-  assert_equal(134.00,Transaction.sum())
+  assert_equal("134.00",Transaction.sum()) #this will return as string due to formatting
 end
 
 

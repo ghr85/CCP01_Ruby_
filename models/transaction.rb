@@ -102,7 +102,7 @@ def self.sum
   for transaction in all_transaction
     sum += transaction.amount_num.to_f
   end
-  return "%.2f" % sum #How does 
+  return "%.2f" % sum #Format float to 2 decimal places after comma
 end
 
 
