@@ -57,7 +57,7 @@ GROUP BY merchants.merchant_name_str, merchants.id HAVING merchants.id = $1"
 values = [@id]
 results = SqlRunner.run(sql,values)
 sum_hash = results.first
-return sum_hash['total'].to_f
+return  "%.2f" % sum_hash['total'] 
 end
 
 def self.all()

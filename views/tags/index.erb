@@ -11,7 +11,7 @@
   </tr>
   <%for tag in @tags%>
   <tr>
- <td value='<%=tag.tag_name_str%>'><%=tag.tag_name_str%></td>
+ <td value='<%=tag.tag_name_str%>'><a href='/tags/<%=tag.id%>/transactions'><%=tag.tag_name_str%></a></td>
  <td value='edit'><form action="/tags/<%=tag.id%>/edit" method="get">
    <input type="submit" value="Edit" />
 </form></td>

@@ -37,6 +37,12 @@ get '/tags/:id/edit' do #Edits singular instance from database
    @edit_tag = Tag.find(params[:id])
    erb(:"tags/edit")
 end
+get '/tags/:id/transactions' do #Edits singular instance from database
+   @tag = Tag.find(params[:id]) #get the Tag
+   @transactions = @tag.transactions() # get all the transactions for that tag, pass it through
+   @sum = @tag.sum_spending
+   erb(:"tags/transactions")
+end
 
 post '/tags/edit' do #Edits singular instance from database
   tag = Tag.new(params)

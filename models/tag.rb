@@ -27,7 +27,7 @@ tag_obj = SqlRunner.run(sql,values)
 
 end
 
-def update() #issue here with having to update ID? ERROR: source for a multiple-column UPDATE item must be a sub-SELECT or ROW() expression LINE 7: $1 ^ 
+def update() #issue here with having to update ID? ERROR: source for a multiple-column UPDATE item must be a sub-SELECT or ROW() expression LINE 7: $1 ^
 
   sql = "UPDATE tags SET
   (
@@ -40,6 +40,25 @@ def update() #issue here with having to update ID? ERROR: source for a multiple-
   WHERE id = $2"
   values = [@tag_name_str,@id]
   SqlRunner.run( sql, values )
+end
+
+def transactions
+sql = "SELECT * FROM transactions WHERE tag_id_int = $1"
+values = [@id]
+transactions = SqlRunner.run(sql, values)
+transaction_array = transactions.map{|transaction| Transaction.new(transaction)}
+return transaction_array
+end
+
+def sum_spending
+sql = "SELECT
+tags.tag_name_str, SUM(transactions.amount_num) AS total
+from tags INNER JOIN transactions ON tags.id = transactions.tag_id_int
+GROUP BY tags.tag_name_str, tags.id HAVING tags.id = $1"
+values = [@id]
+results = SqlRunner.run(sql,values)
+sum_hash = results.first
+return  "%.2f" % sum_hash['total'] 
 end
 
 def self.all()
