@@ -6,14 +6,12 @@
 <table>
   <tr class='header'>
     <th>Tag Name</th>
-    <th>Tag ID</th>
     <th></th>
     <th></th>
   </tr>
   <%for tag in @tags%>
   <tr>
  <td value='<%=tag.tag_name_str%>'><%=tag.tag_name_str%></td>
- <td value='<%=tag.id%>'><%=tag.id%></td>
  <td value='edit'><form action="/tags/<%=tag.id%>/edit" method="get">
    <input type="submit" value="Edit" />
 </form></td>

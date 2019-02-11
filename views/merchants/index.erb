@@ -5,14 +5,13 @@
   <table>
     <tr class='header'>
       <th>Merchant Name</th>
-      <th>Merchant ID</th>
       <th></th>
       <th></th>
     </tr>
     <%for merchant in @merchants%>
     <tr>
    <td value='<%=merchant.merchant_name_str%>'><%=merchant.merchant_name_str%></td>
-   <td value='<%=merchant.id%>'><%=merchant.id%></td>
+
    <td value='edit'><form action="/merchants/<%=merchant.id%>/edit" method="get">
      <input type="submit" value="Edit" />
   </form></td>
