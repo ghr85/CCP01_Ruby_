@@ -29,9 +29,9 @@
    <% if budget.total.to_f >= budget.budget_num.to_f%>
     <p>B</p>
    <% end %></td>
-   <% @month_total_int += budget.total.to_i %>
+   <% @month_total_int += budget.total.to_f %>
 <%end%>
 </tr>
 </table>
-<p class ='page-element'>Total Spent This Month: £<%=@month_total_int%></p>
+<p class ='page-element'>Total Spent This Month: £<%="%.2f" % @month_total_int%></p>
 </div>

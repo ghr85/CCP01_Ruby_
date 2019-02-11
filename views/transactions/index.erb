@@ -3,7 +3,24 @@
   <h2 class ='page-intent'>Overview</h2>
   <p class ='page-element'>Transactions for review</p>
 </div>
-</p id='sum-value'><b>Current transaction balance: £<%=Transaction.sum%></b></p>
+</p id='sum-value'><b> Total for All Transactions: £<%=Transaction.sum%></b></p>
+
+<form action="/transactions/order" method="get">
+  <label for='column-select'>Sort by Column:</label>
+  <select id='column-select' name='column'>
+    <option value='trans_date'>Transaction Date</option>
+    <option value='amount_num'>Amount</option>
+    <option value='merchant_name_str'>Merchant</option>
+    <option value='tag_name_str'>Tag</option>
+  </select>
+  <label for='order-select'>Sort by Column:</label>
+  <select id='order-select' name='order'>
+    <option value='ASC'>Ascending</option>
+    <option value='DESC'>Descending</option>
+  </select>
+  <input type="submit" value="Sort" />
+</form>
+<hr/>
 <table>
   <tr class='header'>
     <th>Date</th>

@@ -34,9 +34,7 @@
             <li class='subnav-item'>
               <a class ='subnav-link' href='/tags'>View Tags</a>
             </li>
-            <li class='subnav-item'>
-              <a class ='subnav-link' href='/budgets'>Monthly Budget Analysis</a>
-            </li>
+
           </ul>
         </li>
         <li class='mainnav-item'>
@@ -50,7 +48,9 @@
             </li>
           </ul>
         </li>
-
+        <li class='mainnav-item'>
+        <a class ='mainnav-link' href='/budgets'>Monthly Budgets</a>
+      </li>
       </ul>
     </nav>
     <section id="content">
@@ -58,8 +58,7 @@
     </section>
     <footer>
       <div class='quote'>
-
-      </p id='footer-value'><%=@quote%></p>
+      </p id='footer-value'><%=@@quote.all.sample%></p>
     </div>
   </footer>
 </body>
