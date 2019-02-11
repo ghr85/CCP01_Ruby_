@@ -59,6 +59,4 @@ def test_sum_spending
 end
 
 
-
-
 end #class end
