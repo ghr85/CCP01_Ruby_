@@ -10,6 +10,7 @@ class Tag
   attr_reader :tag_name_str,:budget_num,:id
 
 
+
   def initialize(options)
     @id = options['id'].to_i
     @tag_name_str = options['tag_name_str']
@@ -94,6 +95,8 @@ class Tag
       tag = Tag.new(tag_hash)
       return tag
     end
+
+
 
 
   end #class end

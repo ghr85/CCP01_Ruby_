@@ -1,0 +1,26 @@
+<div class='page-content'>
+  <h1 class ='page-title'>Monthly Tag Analysis</h1>
+  <h2 class ='page-intent'>Monthly Budget Totals for Each Tag </h2>
+  <p class ='page-element'></p>
+
+</p id='sum-value'><b>Amount spent this month: _placeholder_</b></p>
+<table>
+  <tr class='header'>
+      <th>Tag</th>
+      <th>Budget</th>
+      <th>Amount Spent</th>
+      <th>Warning</th>
+      <th>Exceeded</th>
+    </tr>
+  </tr>
+  <%for budget in @budgets%>
+  <tr class='transaction_rows'>
+    <td value='tag_name'><%=budget.tag_name_str%></td>
+ <td value='budget_value'><%=budget.budget_num%></td>
+ <td value='tag_total'><%=budget.total%></a></td>
+ <td value='warning'>Warning</td>
+ <td value='blown'>Blown</td>
+<%end%>
+</tr>
+</table>
+</div>

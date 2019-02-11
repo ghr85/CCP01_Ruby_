@@ -8,55 +8,58 @@
 <body>
   <header>
     <h1></
-  </header>
-  <nav>
-    <ul class='mainnav'>
-      <li class='mainnav-item'>
-        <a href='/'>Home</a>
-      </li>
-      <li class='mainnav-item'>
-        <a href='/transactions'>Transactions</a>
+    </header>
+    <nav>
+      <ul class='mainnav'>
+        <li class='mainnav-item'>
+          <a href='/'>Home</a>
+        </li>
+        <li class='mainnav-item'>
+          <a href='/transactions'>Transactions</a>
           <ul class='subnav'>
-              <li class='subnav-item'>
-                <a class ='sub-nav-link' href='/transactions/new'>Create Transaction</a>
-              </li>
-              <li class='subnav-item'>
-                <a class ='sub-nav-link' href='/transactions'>View Transactions</a>
-              </li>
+            <li class='subnav-item'>
+              <a class ='sub-nav-link' href='/transactions/new'>Create Transaction</a>
+            </li>
+            <li class='subnav-item'>
+              <a class ='sub-nav-link' href='/transactions'>View Transactions</a>
+            </li>
           </ul>
-      </li>
-      <li class='mainnav-item'>
-        <a href='/tags'>Tags</a>
-        <ul class='subnav'>
+        </li>
+        <li class='mainnav-item'>
+          <a href='/tags'>Tags</a>
+          <ul class='subnav'>
             <li class='subnav-item'>
               <a class ='subnav-link' href='/tags/new'>Create Tag</a>
             </li>
             <li class='subnav-item'>
               <a class ='subnav-link' href='/tags'>View Tags</a>
             </li>
-        </ul>
-      </li>
-      <li class='mainnav-item'>
+            <li class='subnav-item'>
+              <a class ='subnav-link' href='/budgets'>Monthly Budget Analysis</a>
+            </li>
+          </ul>
+        </li>
+        <li class='mainnav-item'>
           <a href='/merchants'>Merchants</a>
           <ul class='subnav'>
-              <li class='subnav-item'>
-                <a class ='subnav-link' href='/merchants/new'>Create Merchant</a>
-              </li>
-              <li class='subnav-item'>
-                <a class ='subnav-link' href='/merchants'>View Merchants</a>
-              </li>
+            <li class='subnav-item'>
+              <a class ='subnav-link' href='/merchants/new'>Create Merchant</a>
+            </li>
+            <li class='subnav-item'>
+              <a class ='subnav-link' href='/merchants'>View Merchants</a>
+            </li>
           </ul>
-      </li>
+        </li>
 
-    </ul>
-  </nav>
-  <section id="content">
-  <%= yield %>
-  </section>
-  <footer>
-    <div class='quote'>
-    
-  </p id='footer-value'><%=@quote%></p>
+      </ul>
+    </nav>
+    <section id="content">
+      <%= yield %>
+    </section>
+    <footer>
+      <div class='quote'>
+
+      </p id='footer-value'><%=@quote%></p>
     </div>
   </footer>
 </body>

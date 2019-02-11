@@ -44,6 +44,16 @@ get '/tags/:id/transactions' do #Edits singular instance from database
    erb(:"tags/transactions")
 end
 
+get '/tags/analysis' do
+erb(:"tags/analysis_index")
+end
+
+
+post '/tags/analysis/:month/:year' do #submits data from Tag analysis page
+  @budgets = Tag.analysis(params[:month],params[:year])
+  erb(:"tags/analysis_results")
+end
+
 post '/tags/edit' do #Edits singular instance from database
   tag = Tag.new(params)
   tag.update()

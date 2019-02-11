@@ -1,0 +1,25 @@
+<div class='page-content'>
+  <h1 class ='page-title'>Analysis</h1>
+  <h2 class ='page-intent'>Tag Budget Monthly Analysis</h2>
+  <p class ='page-element'>To begin, please select a month and year for analysis</p>
+  <form action="/budgets/results" method="get">
+<label for='month_int'>Select a month:</label>
+<select id='month_int' name='month'>
+ <option value='1'>January</option>
+ <option value='2'>February</option>
+ <option value='3'>March</option>
+ <option value='4'>April</option>
+ <option value='5'>May</option>
+ <option value='6'>June</option>
+ <option value='7'>July</option>
+ <option value='8'>August</option>
+ <option value='9'>September</option>
+ <option value='10'>October</option>
+ <option value='11'>November</option>
+ <option value='12'>December</option>
+</select>
+<label for='year_int'>Input Year:</label>
+<input id='year_int' type='text' name='year' value='YYYY'/>
+<input type="submit" value="Show Monthly Tag Analysis" />
+</form>
+</div>

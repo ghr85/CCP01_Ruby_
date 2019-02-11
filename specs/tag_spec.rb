@@ -37,7 +37,7 @@ class TestTag < MiniTest::Test
           @test_transaction_2 = Transaction.new({
               'tag_id_int' => @test_tag.id,
               'merchant_id_int' => @test_merchant.id,
-              'amount_num' => 14
+              'amount_num' => 14,
               'trans_date' => '15/1/19'
               })
               @test_transaction_1.save()
@@ -57,6 +57,8 @@ end
 def test_sum_spending
   assert_equal("28.00",@test_tag.sum_spending)
 end
+
+
 
 
 end #class end
