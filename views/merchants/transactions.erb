@@ -1,8 +1,8 @@
 <div class='page-content'>
   <h1 class ='page-title'> Merchants</h1>
-  <h2 class ='page-intent'>Overview</h2>
-  <p class ='page-element'>Transactions with <%=@merchant.merchant_name_str%> </p>
-</div>
+  <h2 class ='page-intent'>Transactions with <%=@merchant.merchant_name_str%> </h2>
+  <p class ='page-element'></p>
+
 </p id='sum-value'><b>Amount spent:<%=@sum%></b></p>
 <table>
   <tr class='header'>
@@ -17,7 +17,7 @@
   <tr class='transaction_rows'>
     <td value='date'>Date</td>
  <td value='<%=transaction.merchant_id_int%>'><%=transaction.merchant.merchant_name_str%></td>
- <td value='<%=transaction.tag_id_int%>'><%=transaction.tag.tag_name_str%></td>
+ <td value='<%=transaction.tag_id_int%>'><a href='/tags/<%=transaction.tag_id_int%>/transactions'><%=transaction.tag.tag_name_str%></a></td>
  <td value='<%=transaction.amount_num%>'>£<%=transaction.amount_num%></td>
  <td value='edit'><form action="/transactions/<%=transaction.id%>/edit" method="get">
    <input type="submit" value="Edit" />
@@ -30,3 +30,4 @@
 <%end%>
 </tr>
 </table>
+</div>

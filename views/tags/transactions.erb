@@ -1,8 +1,8 @@
 <div class='page-content'>
   <h1 class ='page-title'> Tags</h1>
-  <h2 class ='page-intent'>Overview</h2>
-  <p class ='page-element'>Transactions in <%=@tag.tag_name_str%> </p>
-</div>
+  <h2 class ='page-intent'>Transactions in <%=@tag.tag_name_str%></h2>
+  <p class ='page-element'></p>
+
 </p id='sum-value'><b>Amount spent:<%=@sum%></b></p>
 <table>
   <tr class='header'>
@@ -16,7 +16,7 @@
   <%for transaction in @transactions%>
   <tr class='transaction_rows'>
     <td value='date'>Date</td>
- <td value='<%=transaction.merchant_id_int%>'><%=transaction.merchant.merchant_name_str%></td>
+ <td value='<%=transaction.merchant_id_int%>'><a href='/merchants/<%=transaction.merchant_id_int%>/transactions'><%=transaction.merchant.merchant_name_str%></a></td>
  <td value='<%=transaction.tag_id_int%>'><%=transaction.tag.tag_name_str%></td>
  <td value='<%=transaction.amount_num%>'>£<%=transaction.amount_num%></td>
  <td value='edit'><form action="/transactions/<%=transaction.id%>/edit" method="get">
@@ -30,3 +30,4 @@
 <%end%>
 </tr>
 </table>
+</div>
