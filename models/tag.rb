@@ -58,7 +58,10 @@ GROUP BY tags.tag_name_str, tags.id HAVING tags.id = $1"
 values = [@id]
 results = SqlRunner.run(sql,values)
 sum_hash = results.first
-return  "%.2f" % sum_hash['total'] 
+if sum_hash != nil
+return  "%.2f" % sum_hash['total']
+else return 0
+end
 end
 
 def self.all()
