@@ -37,6 +37,12 @@ get '/merchants/:id/edit' do #Edits singular instance from database
    @edit_merchant = Merchant.find(params[:id])
    erb(:"merchants/edit")
 end
+get '/merchants/:id/transactions' do #Edits singular instance from database
+   @merchant = Merchant.find(params[:id]) #get the merchant
+   @transactions = @merchant.transactions() # get all the transactions for that merchant, pass it through
+   @sum = @merchant.sum_spending
+   erb(:"merchants/transactions")
+end
 
 post '/merchants/edit' do #Edits singular instance from database
   merchant = Merchant.new(params)

@@ -10,7 +10,7 @@
     </tr>
     <%for merchant in @merchants%>
     <tr>
-   <td value='<%=merchant.merchant_name_str%>'><%=merchant.merchant_name_str%></td>
+   <td value='<%=merchant.merchant_name_str%>'><a href='/merchants/<%=merchant.id%>/transactions'><%=merchant.merchant_name_str%></a></td>
 
    <td value='edit'><form action="/merchants/<%=merchant.id%>/edit" method="get">
      <input type="submit" value="Edit" />

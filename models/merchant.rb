@@ -41,6 +41,25 @@ def update()
   SqlRunner.run( sql, values )
 end
 
+def transactions
+sql = "SELECT * FROM transactions WHERE merchant_id_int = $1"
+values = [@id]
+transactions = SqlRunner.run(sql, values)
+transaction_array = transactions.map{|transaction| Transaction.new(transaction)}
+return transaction_array
+end
+
+def sum_spending
+sql = "SELECT
+merchants.merchant_name_str, SUM(transactions.amount_num) AS total
+from merchants INNER JOIN transactions ON merchants.id = transactions.merchant_id_int
+GROUP BY merchants.merchant_name_str, merchants.id HAVING merchants.id = $1"
+values = [@id]
+results = SqlRunner.run(sql,values)
+sum_hash = results.first
+return sum_hash['total'].to_f
+end
+
 def self.all()
   sql = "SELECT * FROM merchants"
   values = []

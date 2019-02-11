@@ -60,6 +60,7 @@ Proto Persona Davina:
 * Delete test objects from DB to serve test purposes by using teardown.
 * Issues with Sinatra and updating - have to updated all columns despite ID being primary?
 * Wow. had to replace amount_int with amount_num - NUMERIC postgres type followed by issues with decimal points. There's a doosy.
+* ACCESS PG OBJECTS USING '' NOT SYMBOLS. DOLT.
 
 ### Files
 

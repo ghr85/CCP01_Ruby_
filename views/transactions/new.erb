@@ -5,7 +5,7 @@
 <hr/>
   <form method='post' action='/transactions'>
     <label for='amount'>Amount:</label>
-    <input id='amount' type='number' name='amount_num'/>
+    <input id='amount' type='number' name='amount_num'step="any"/>
     <label for='merchant-select'>Select a merchant:</label>
     <select id='merchant-select' name='merchant_id_int'>
       <%@merchants.each do |merchant|%>

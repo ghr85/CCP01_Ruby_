@@ -1,11 +1,12 @@
 <div class='page-content'>
-  <h1 class ='page-title'> Transactions</h1>
+  <h1 class ='page-title'> Merchants</h1>
   <h2 class ='page-intent'>Overview</h2>
-  <p class ='page-element'>Transactions for review</p>
+  <p class ='page-element'>Transactions with <%=@merchant.merchant_name_str%> </p>
 </div>
-</p id='sum-value'><b>Current transaction balance: £<%=Transaction.sum%></b></p>
+</p id='sum-value'><b>Amount spent:<%=@sum%></b></p>
 <table>
   <tr class='header'>
+    <th>Date</th>
     <th>Merchant Name</th>
     <th>Tag Name</th>
     <th>Amount</th>
@@ -14,7 +15,8 @@
   </tr>
   <%for transaction in @transactions%>
   <tr class='transaction_rows'>
- <td value='<%=transaction.merchant_id_int%>'><a href='/merchants/<%=transaction.merchant_id_int%>/transactions'><%=transaction.merchant.merchant_name_str%></a></td>
+    <td value='date'>Date</td>
+ <td value='<%=transaction.merchant_id_int%>'><%=transaction.merchant.merchant_name_str%></td>
  <td value='<%=transaction.tag_id_int%>'><%=transaction.tag.tag_name_str%></td>
  <td value='<%=transaction.amount_num%>'>£<%=transaction.amount_num%></td>
  <td value='edit'><form action="/transactions/<%=transaction.id%>/edit" method="get">
