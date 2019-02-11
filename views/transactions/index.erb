@@ -6,14 +6,16 @@
 </p id='sum-value'><b>Current transaction balance: £<%=Transaction.sum%></b></p>
 <table>
   <tr class='header'>
-    <th>Merchant Name</th>
-    <th>Tag Name</th>
+    <th>Date</th>
+    <th>Merchant </th>
+    <th>Tag</th>
     <th>Amount</th>
     <th></th>
     <th></th>
   </tr>
   <%for transaction in @transactions%>
   <tr class='transaction_rows'>
+ <td value='<%=transaction.trans_date%>'><%=transaction.trans_date%></td>
  <td value='<%=transaction.merchant_id_int%>'><a href='/merchants/<%=transaction.merchant_id_int%>/transactions'><%=transaction.merchant.merchant_name_str%></a></td>
  <td value='<%=transaction.tag_id_int%>'><a href='/tags/<%=transaction.tag_id_int%>/transactions'><%=transaction.tag.tag_name_str%></a></td>
  <td value='<%=transaction.amount_num%>'>£<%=transaction.amount_num%></td>

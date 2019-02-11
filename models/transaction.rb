@@ -7,7 +7,7 @@ require('pry')
 
 class Transaction
 
-  attr_reader :tag_id_int, :merchant_id_int, :amount_num, :id
+  attr_reader :tag_id_int, :merchant_id_int, :amount_num, :trans_date, :id
 
 
   def initialize(options)
@@ -15,17 +15,19 @@ class Transaction
     @tag_id_int = options['tag_id_int'].to_i
     @merchant_id_int = options['merchant_id_int'].to_i
     @amount_num= options['amount_num']
+    @trans_date = options['trans_date']
   end
 
   def save
     sql = "INSERT INTO transactions(
     tag_id_int,
     merchant_id_int,
-    amount_num
+    amount_num,
+    trans_date
     ) VALUES (
-      $1,$2,$3
+      $1,$2,$3,$4
       ) RETURNING *"
-      values = [@tag_id_int,@merchant_id_int,@amount_num]
+      values = [@tag_id_int,@merchant_id_int,@amount_num,@trans_date]
       transaction_obj = SqlRunner.run(sql,values)
       @id = transaction_obj.first['id'].to_i
 
@@ -38,14 +40,15 @@ class Transaction
         tag_id_int,
         merchant_id_int,
         amount_num,
+        trans_date,
         id
       )
       =
       (
-        $1,$2,$3,$4
+        $1,$2,$3,$4,$5
       )
-      WHERE id = $4"
-      values = [@tag_id_int,@merchant_id_int,@amount_num,@id]
+      WHERE id = $5"
+      values = [@tag_id_int,@merchant_id_int,@amount_num,@trans_date,@id]
       SqlRunner.run( sql, values )
     end
 

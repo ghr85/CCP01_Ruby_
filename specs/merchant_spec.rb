@@ -33,12 +33,14 @@ def setup
     @test_transaction_1 = Transaction.new({
         'tag_id_int' => @test_tag.id,
         'merchant_id_int' => @test_merchant.id,
-        'amount_num' => 14
+        'amount_num' => 14,
+        'trans_date' => '14/1/19'
         })
         @test_transaction_2 = Transaction.new({
             'tag_id_int' => @test_tag.id,
             'merchant_id_int' => @test_merchant.id,
-            'amount_num' => 14
+            'amount_num' => 14,
+            'trans_date' => '15/1/19'
             })
             @test_transaction_1.save()
             @test_transaction_1.save()
@@ -56,7 +58,7 @@ def test_has_name?
 end
 
 def test_sum_spending
-  assert_equal(28.0,@test_merchant.sum_spending)
+  assert_equal("28.00",@test_merchant.sum_spending)
 end
 
 

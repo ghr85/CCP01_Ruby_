@@ -15,7 +15,7 @@
   </tr>
   <%for transaction in @transactions%>
   <tr class='transaction_rows'>
-    <td value='date'>Date</td>
+    <td value='<%=transaction.trans_date%>'><%=transaction.trans_date%></td>
  <td value='<%=transaction.merchant_id_int%>'><%=transaction.merchant.merchant_name_str%></td>
  <td value='<%=transaction.tag_id_int%>'><a href='/tags/<%=transaction.tag_id_int%>/transactions'><%=transaction.tag.tag_name_str%></a></td>
  <td value='<%=transaction.amount_num%>'>£<%=transaction.amount_num%></td>

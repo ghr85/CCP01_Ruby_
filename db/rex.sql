@@ -17,5 +17,8 @@ CREATE TABLE transactions(
   id SERIAL4 PRIMARY KEY,
   tag_id_int INT4 REFERENCES tags(id) ON DELETE CASCADE,
   merchant_id_int INT4 REFERENCES merchants(id) ON DELETE CASCADE,
-  amount_num NUMERIC(15,2)
+  amount_num NUMERIC(15,2),
+  trans_date DATE
 );
+
+ALTER DATABASE rex SET datestyle TO "ISO, DMY";

@@ -32,7 +32,8 @@ def setup
   @test_transaction = Transaction.new({
       'tag_id_int' => @test_tag.id,
       'merchant_id_int' => @test_merchant.id,
-      'amount_num' => 14
+      'amount_num' => 14,
+      'trans_date' => '14/1/19'
       })
 end
 
@@ -49,6 +50,10 @@ def test_has_merchant_id?
 end
 def test_has_amount_num?
   assert_equal(14,@test_transaction.amount_num)
+  # binding.pry
+end
+def test_has_date?
+  assert_equal('14/1/19',@test_transaction.trans_date)
   # binding.pry
 end
 
