@@ -13,21 +13,17 @@ require_relative('../models/merchant.rb')
 require_relative('../models/tag.rb')
 also_reload('../models/*')
 
-get '/transactions' do #retrieves the overall list of transaction
-  @transactions = Transaction.all()
-  erb ( :"transactions/index" )
-end
 
-get '/transactions/order' do #retrieves the overall list of transaction
+get '/transactions' do
   transactions = Transaction.all()
   case params[:column]
   when 'amount_num'
     if params[:order] == 'ASC'
       @transactions = transactions.sort_by{|transaction| transaction.amount_num.to_i}
     else
-     @transactions = transactions.sort_by{|transaction| transaction.amount_num.to_i}.reverse if params[:order]
+     @transactions = transactions.sort_by{|transaction| transaction.amount_num.to_i}.reverse 
    end
-    #@transactions = transactions.sort_by{|transaction| -transaction.amount_num.to_i}
+
   when 'trans_date'
     if params[:order] == 'ASC'
     @transactions = transactions.sort_by{|transaction| transaction.trans_date}
@@ -46,6 +42,8 @@ get '/transactions/order' do #retrieves the overall list of transaction
   else
     @transactions = transactions.sort_by{|transaction| transaction.tag.tag_name_str}
   end
+  when nil
+  @transactions = transactions
   end
   erb ( :"transactions/index" )
 end

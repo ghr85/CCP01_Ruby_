@@ -3,7 +3,23 @@
   <h2 class ='page-intent'>Overview</h2>
   <p class ='page-element'>Tags for review</p>
 </div>
-<table>
+
+
+  <form action="/tags" method="get">
+    <label for='column-select'>Sort by:</label>
+    <select id='column-select' name='column'>
+      <option value='tag_name_str'>Tag Name</option>
+      <option value='budget_num'>Assigned Budget</option>
+    </select>
+    <label for='order-select'>Order:</label>
+    <select id='order-select' name='order'>
+      <option value='ASC'>Ascending</option>
+      <option value='DESC'>Descending</option>
+    </select>
+    <input type="submit" value="Sort" />
+  </form>
+  <hr/>
+  <table>
   <tr class='header'>
     <th>Tag Name</th>
     <th>Budget</th>
