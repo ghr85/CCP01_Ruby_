@@ -14,7 +14,15 @@ require_relative('../models/tag.rb')
 also_reload('../models/*')
 
 get '/merchants' do #retrieves the overall list of merchant
-  @merchants = Merchant.all
+  merchants = Merchant.all
+  case params[:order]
+  when 'ASC'
+    @merchants = merchants.sort_by{|merchant| merchant.merchant_name_str}
+  when 'DESC'
+    @merchants = merchants.sort_by{|merchant| merchant.merchant_name_str}.reverse
+  when nil
+  @merchants = merchants
+  end
   erb ( :"merchants/index" )
 end
 

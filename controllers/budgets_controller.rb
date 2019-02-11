@@ -23,7 +23,7 @@ end
 
 get '/budgets/results' do
   months = ['January','February','March','April','May','June','July','August','September','October','November','December']
-  @month = months[params[:month].to_i]
+  @month = months[params[:month].to_i - 1]
   @budgets = Budget.analysis(params[:month],params[:year])
   erb(:"budgets/results")
 end
