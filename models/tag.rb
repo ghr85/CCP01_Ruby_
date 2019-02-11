@@ -7,21 +7,22 @@ require('pry')
 
 class Tag
 
-  attr_reader :tag_name_str,:id
+  attr_reader :tag_name_str,:budget_num,:id
 
 
   def initialize(options)
     @id = options['id'].to_i
     @tag_name_str = options['tag_name_str']
+    @budget_num = options['budget_num']
   end
 
   def save
     sql = "INSERT INTO tags(
-    tag_name_str
+    tag_name_str,budget_num
     ) VALUES (
-      $1
+      $1,$2
       ) RETURNING *"
-      values = [@tag_name_str]
+      values = [@tag_name_str,@budget_num]
       tag_obj = SqlRunner.run(sql,values)
       @id = tag_obj.first['id'].to_i
 
@@ -31,14 +32,14 @@ class Tag
 
       sql = "UPDATE tags SET
       (
-        tag_name_str,id
+        tag_name_str,budget_num,id
       )
       =
       (
-        $1,$2
+        $1,$2,$3
       )
-      WHERE id = $2"
-      values = [@tag_name_str,@id]
+      WHERE id = $3"
+      values = [@tag_name_str,@budget_num,@id]
       SqlRunner.run( sql, values )
     end
 

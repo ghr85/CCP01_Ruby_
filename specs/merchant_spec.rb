@@ -18,7 +18,8 @@ def setup
 
     @test_tag = Tag.new(
       {
-        'tag_name_str' => 'Booze'
+        'tag_name_str' => 'Booze',
+        'budget_num' => 50
       }
     )
 

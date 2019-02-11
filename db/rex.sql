@@ -4,7 +4,8 @@ DROP TABLE tags;
 
 CREATE TABLE tags(
   id SERIAL4 PRIMARY KEY ,
-  tag_name_str VARCHAR(255)
+  tag_name_str VARCHAR(255),
+  budget_num NUMERIC(15,2)
 );
 
 CREATE TABLE merchants(

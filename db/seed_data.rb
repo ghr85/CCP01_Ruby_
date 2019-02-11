@@ -12,15 +12,18 @@ Merchant.delete_all
 
 
 tag_1 = Tag.new({
-  'tag_name_str' => 'Food'
+  'tag_name_str' => 'Food',
+  'budget_num' => 300
   })
 
 tag_2 = Tag.new({
-    'tag_name_str' => 'Clothing'
+    'tag_name_str' => 'Clothing',
+    'budget_num' => 80
     })
 
 tag_3 = Tag.new({
-  'tag_name_str' => 'Bills'
+  'tag_name_str' => 'Bills',
+  'budget_num' => 500
       })
 
 

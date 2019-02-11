@@ -17,13 +17,14 @@ class TestTransaction < MiniTest::Test
 def setup
   @test_tag = Tag.new(
     {
-      'tag_name_str' => 'Food'
+      'tag_name_str' => 'Booze',
+      'budget_num' => 50
     }
   )
 
   @test_merchant = Merchant.new(
     {
-      'merchant_name_str' => 'Tesco'
+      'merchant_name_str' => 'Sainsburys'
     }
   )
   @test_tag.save()
@@ -53,13 +54,13 @@ end
 
 def test_merchant?
   @test_transaction.save()
-    assert_equal('Tesco',@test_transaction.merchant.merchant_name_str)
+    assert_equal('Sainsburys',@test_transaction.merchant.merchant_name_str)
   Transaction.delete(@test_transaction.id)
 end
 
 def test_tag?
   @test_transaction.save()
-    assert_equal('Food',@test_transaction.tag.tag_name_str)
+    assert_equal('Booze',@test_transaction.tag.tag_name_str)
   Transaction.delete(@test_transaction.id)
 end
 
