@@ -27,6 +27,6 @@ class Budget
 
     end
 
-
+    
 
   end #class end

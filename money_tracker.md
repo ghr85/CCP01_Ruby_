@@ -84,19 +84,60 @@ _So that I can see the total amount of money I have currently spent_<br />
 *As a user I want to see if I'm making progress from month to month so that I know if it's worth me using the app*
 
 **Acceptance Criteria**
-Users should be able to transaction dates and order transactions by date in order to track their spending over time.
+Users should be able to transaction dates and order transactions by date in order to track their spending over time.:white_check_mark:
 
 **Acceptance Criteria**
-Users should see a total amount for transactions over a certain period of time.
+Users should see a total amount for transactions over a certain period of time. :white_check_mark:
 
 *As a user i want to set budgets so that I can plan for the future and save money*
 
 **Acceptance Criteria**
-Users should be able to assign budgets to tags and if budget is neared or exceeded then a warning will display.
+Users should be able to assign budgets to tags and if budget is neared or exceeded then a warning will display.:white_check_mark:
 
 *As a user I want to be amused/entertained when I log on so that the sheer boredom of dealing with finances doesn't make me want to wretch*
 
-**Acceptance Criteria**  Users should be greeted with a random quote on page load
+**Acceptance Criteria**  Users should be greeted with a random quote on page load :white_check_mark:
+
+*As a user I may want to see how much I'm sepnding at specific merchants so that i know which conglomerate is getting my coin*
+
+**Acceptance criteria** Users should be able to see how much they've spent at each merchants :white_check_mark:
+
+*As a user I may want to see how much I'm spending in specific areas so that i can see where my habits lie*
+
+**Acceptance criteria** Users should be able to see how much they've spent under each tag.
+:white_check_mark:
+
+#### Phase 2 reflection
+
+* Site still bland, phase 3 to reflect. Navigation bar horizontal collapsible with tinosaur logo?
+
+* Site performs robustly but we have a fat controller and thin model - can this be improved?
+
+* CSV interactivity will have to be pushed back into next iterative cycle owing to time constraints.
+
+* Different language used for same data types on different pages, bring together.
+
+* Transactions input should match table view - reorder
+
+* Tags view show total budget?
+
+* Missing £ signs for total and table values.
+
+* Table spacing should be relevant to view size
+
+* Can date output be translated to UK style?
+
+
+
+#### Acceptance Criteria Cycle 3
+
+*As a user I want an interface that is clear and yet pleasing to use so that i enjoy using the service*
+
+**Acceptance Criteria** Site should be styled yet remain legible.
+**Acceptance Criteria** Site input/output formatting should be consistent?
+
+*As a user I want to use the service on across all my devices so that I can input transactions as they happen*
+**Acceptance Criteria** Site should have responsive layout.
 
 *As a user I want to upload more than one transaction at at time so that if I forget to log expenses it's not such a chore*
 
@@ -105,11 +146,3 @@ Users should be able to assign budgets to tags and if budget is neared or exceed
 *As a user I may want to show off my budgeting prowess to apply for a mortgage*
 
 **Acceptance Criteria** Users should have csv export Functionality
-
-*As a user I may want to see how much I'm sepnding at specific merchants so that i know which conglomerate is getting my coin*
-
-**Acceptance criteria** Users should be able to see how much they've spent at each merchants
-
-*As a user I may want to see how much I'm spending in specific areas so that i can see where my habits lie*
-
-**Acceptance criteria** Users should be able to see how much they've spent under each tag.
