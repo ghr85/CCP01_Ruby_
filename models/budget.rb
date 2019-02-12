@@ -15,7 +15,7 @@ class Budget
    @total = options['total']
  end
 
-    def self.analysis(month,year)
+    def self.analysis(month = '12', year = '2018')
       sql ="SELECT
       tags.tag_name_str, tags.budget_num, SUM(transactions.amount_num) AS total
       from tags INNER JOIN transactions ON tags.id = transactions.tag_id_int

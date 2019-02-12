@@ -1,8 +1,9 @@
 <div class='page-content'>
-  <h1 class ='page-title'>Analysis</h1>
-  <h2 class ='page-intent'>Tag Budget Monthly Analysis</h2>
-  <p class ='page-element'>To begin, please select a month and year for analysis</p>
-  <form action="/budgets/results" method="get">
+  <h1 class ='page-title'>Monthly Analysis</h1>
+  <h2 class ='page-intent'>Transaction totals by budget for <%=@month%>
+   <%=@year if @year != 0%></h2>
+  <p class ='page-element'></p>
+  <form action="/budgets" method="get">
 <label for='month_int'>Select a month:</label>
 <select id='month_int' name='month'>
  <option value='1'>January</option>
@@ -22,4 +23,35 @@
 <input id='year_int' type='text' name='year' value='2019' maxlength='4' minlength = '4'/>
 <input type="submit" value="Show Monthly Tag Analysis" />
 </form>
+
+<table>
+  <tr class='header'>
+      <th>Tag</th>
+      <th>Budget</th>
+      <th>Amount Spent</th>
+      <th>Warning</th>
+      <th>Exceeded</th>
+    </tr>
+  </tr>
+  <% @month_total_int = 0 %>
+  <%for budget in @budgets%>
+
+  <tr class='transaction_rows'>
+    <td value='tag_name'><%=budget.tag_name_str%></td>
+ <td value='budget_value'><%=budget.budget_num%></td>
+ <td value='tag_total'><%=budget.total%></a></td>
+ <td value='warning'>
+   <% if budget.total.to_f >= (budget.budget_num.to_f*0.8)%>
+    <p>W</p>
+   <% end %>
+   </td>
+ <td value='blown'>
+   <% if budget.total.to_f >= budget.budget_num.to_f%>
+    <p>B</p>
+   <% end %></td>
+   <% @month_total_int += budget.total.to_f %>
+<%end%>
+</tr>
+</table>
+<p class ='page-element'>Total Spent This Month: £<%="%.2f" % @month_total_int%></p>
 </div>

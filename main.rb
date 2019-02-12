@@ -17,6 +17,6 @@ require_relative('models/quotes')
 also_reload('./models/*')
 
 get '/' do
-  @@quote = Quote
+  @quote = Quote.all.sample
 erb(:index)
 end
