@@ -29,7 +29,7 @@
   <%for tag in @tags%>
   <tr>
  <td value='<%=tag.tag_name_str%>'><a href='/tags/<%=tag.id%>/transactions'><%=tag.tag_name_str%></a></td>
- <td value='<%=tag.budget_num%>'><a href='/tags/<%=tag.id%>/transactions'><%=tag.budget_num%></a></td>
+ <td value='<%=tag.budget_num%>'><a href='/tags/<%=tag.id%>/transactions'>£<%=tag.budget_num%></a></td>
  <td value='edit'><form action="/tags/<%=tag.id%>/edit" method="get">
    <input type="image" src="images/edit_icon.png" border="0" alt="submit" style="width:20px;" />
 </form></td>
@@ -40,6 +40,11 @@
 </td>
 <%end%>
 </tr>
+<tfoot>
+  <tr>
+    <th scope="row" colspan="4"><b> Total for All Transactions: £_BUDGET_SUM</b></th>
+    </tr>
+  </tfoot>
 </table>
 </div>
 </div>
