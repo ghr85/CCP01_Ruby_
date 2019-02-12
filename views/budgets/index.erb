@@ -50,11 +50,11 @@
 
   <tr class='transaction_rows'>
     <td value='tag_name'><%=budget.tag_name_str%></td>
- <td value='budget_value'><%=budget.budget_num%></td>
- <td value='tag_total'><%=budget.total%></a></td>
+ <td value='budget_value'>£<%=budget.budget_num%></td>
+ <td value='tag_total'>£<%=budget.total%></a></td>
  <td value='warning'>
    <% if budget.total.to_f >= (budget.budget_num.to_f*0.8)%>
-    <p>W</p>
+    <img src="images/warning_icon.png" border="0" alt="warning_icon" style="width:20px;"/>
    <% end %>
    </td>
  <td value='blown'>
