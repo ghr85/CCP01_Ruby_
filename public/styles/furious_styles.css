@@ -1,24 +1,178 @@
+/* Use this selector to reset things to zero */
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
 body{
   font-family: 'Cabin', sans-serif;
 }
+
+a {
+  text-decoration: none;
+  color: black
+}
+/* header styling */
 header{
-position: relative;
+height: auto;
+color: #de700b;
+padding: 10px;
+border: 0px;
+margin: 0px;
 }
-footer{
-  position: relative;
+.head-contain{
+  display: inline-flex;
 }
+header img{
+  height: 40px;
+ }
+ header p{
+   margin-left: 15px;
+  }
+header a:visited{
+  color: #de700b;
+}
+
+/* header styling */
+
+
+
+
+/* Navigation Begin*/
+
 nav{
 
+  background-color: #de700b;
+  color: rgb(249, 246, 248);
 }
-ul{
+
+nav ul{
+display: flex;
+align: center;
+}
+nav ul li{
+  flex: 1;
+  text-align: center;
+  list-style: none;
 
 }
-li.subnav-item{
-  display:inline;
-}
-h1, h2, h3, h4, h5, h6 {
+nav ul li ul{
+  flex: 1;
+  list-style: none;
+  display: none;
 
 }
-p {
+
+nav ul li:hover ul{
+  display: block;
+}
+
+nav ul li ul :hover a{
+  color: black;
+}
+
+nav li a{
+  color: rgb(249, 246, 248);
+}
+
+li a:visited{
+  color: rgb(249, 246, 248);
+}
+
+/* Navigation End*/
+
+/* Homepage Styling */
+#homepage{
+  min-height: 40rem;
+  background-image: url("../images/homepage_background.png");
+  margin: 0;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+/* Begin grid by creating wrapper class */
+.homepage-wrapper {
+    display: grid;
+    grid-template-columns: 20% 20% 20% 20% 20%;
+    grid-template-rows: 20% 20% 20% 20% 20%;
+    grid-gap: 0px;
+}
+
+
+/* end grid wrapper class */
+
+#homepage .page-title{
+  font-size: 48pt;
+  grid-column-start: 1;
+  grid-column-end: 6;
+  grid-row-start: 1;
+  grid-row-end: 3;
+  margin top: 10px;
+  margin-left: 10px;
+}
+
+#homepage .page-intent{
+  grid-column-start: 3;
+  grid-column-end: 5;
+  margin: 5px;
+  border: 0;
+  padding:5px;
+}
+
+
+#homepage .quote{
+  grid-column-start: 4;
+  grid-column-end: 6;
+  grid-row-start: 2;
+  grid-row-end: 3;
+ padding-right:2px;
+
+}
+
+
+/* Homepage Styling */
+/* Content Page Styling*/
+#content-page .wrapper-content{
+  display: grid;
+  grid-template-columns: 20% 20% 20% 20% 20%;
+  grid-template-rows: 20% 20% 20% 20% 20%;
+  grid-gap: 0px;
+}
+
+#content-page .page-title{
+  font-size: 48pt;
+  grid-column-start: 1;
+  grid-column-end: 3;
+  grid-row-start: 1;
+  grid-row-end: 2;
+  margin top: 10px;
+  margin-left: 5px;
+}
+#content-page .page-intent{
+  font-size: 24pt;
+  grid-column-start: 1;
+  grid-column-end: 3;
+  grid-row-start: 1;
+  grid-row-end: 2;
+  margin top: 10px;
+  margin-left: 5px;
+}
+#content-page table{
+
+}
+
+#content-page tr:nth-child(odd){
+  background-color: rgb(252, 156, 28);
+}
+#content-page tr:nth-child(even) {
+  background-color: rgb(247, 200, 120);
+}
+#content-page td {
+  text-align: center;
+  padding: 2px ;
+  border: 0px ;
+  margin: 0px ;
 
 }

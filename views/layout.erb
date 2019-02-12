@@ -7,13 +7,18 @@
 </head>
 <body>
   <header>
-    <h1>Rex</h1>
+    <div class ='head-contain'>
+    <div class = 'head-img>'>
+    <a href='/'><img src='/images/tiny_rex_logo_right.png' alt='Rex dinosaur logo'> </img></a>
+  </div>
+  <div class = 'head-text'>
+    <a href='/'><h1>Rex</h1></a>
+  </div>
+  </div>
     </header>
-    <nav>
+    <nav role='navigation'>
       <ul class='mainnav'>
-        <li class='mainnav-item'>
-          <a href='/'>Home</a>
-        </li>
+      
         <li class='mainnav-item'>
           <a href='/transactions'>Transactions</a>
           <ul class='subnav'>
@@ -53,11 +58,9 @@
       </li>
       </ul>
     </nav>
-    <section id="content">
+
       <%= yield %>
-    </section>
-    <footer>
-      <p>footer text</p>
-  </footer>
+
+
 </body>
 </html>

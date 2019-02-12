@@ -1,11 +1,11 @@
+<div id='content-page'>
 <div class='page-content'>
   <h1 class ='page-title'>Tags</h1>
   <h2 class ='page-intent'>Overview</h2>
   <p class ='page-element'>Tags for review</p>
-</div>
 
 
-  <form action="/tags" method="get">
+  <form class='sorter' action="/tags" method="get">
     <label for='column-select'>Sort by:</label>
     <select id='column-select' name='column'>
       <option value='tag_name_str'>Tag Name</option>
@@ -19,7 +19,7 @@
     <input type="submit" value="Sort" />
   </form>
   <hr/>
-  <table>
+  <table class='table-data'>
   <tr class='header'>
     <th>Tag Name</th>
     <th>Budget</th>
@@ -42,6 +42,7 @@
 </tr>
 </table>
 </div>
-
+</div>
+</div>
 <!-- <input type="image" id="image" alt="Login"
        src="/media/examples/login-button.png"> Keep this for later-->

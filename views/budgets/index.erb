@@ -1,3 +1,4 @@
+<div id='content-page'>
 <div class='page-content'>
   <h1 class ='page-title'>Monthly Analysis</h1>
   <h2 class ='page-intent'>Transaction totals by budget for <%=@month%>
@@ -35,13 +36,13 @@
 <input type="submit" value="Show Monthly Tag Analysis" />
 </form>
 
-<table>
+<table class='table-data'>
   <tr class='header'>
       <th>Tag</th>
       <th>Budget</th>
       <th>Amount Spent</th>
-      <th>Warning</th>
-      <th>Exceeded</th>
+      <th></th>
+      <th></th>
     </tr>
   </tr>
   <% @month_total_int = 0 %>
@@ -65,4 +66,5 @@
 </tr>
 </table>
 <p class ='page-element'>Total Spent This Month: £<%="%.2f" % @month_total_int%></p>
+</div>
 </div>

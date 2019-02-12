@@ -1,10 +1,11 @@
+<div id='content-page'>
 <div class='page-content'>
   <h1 class ='page-title'>Tags</h1>
   <h2 class ='page-intent'>Edit tag <%=@edit_tag.tag_name_str%> </h2>
   <p class ='page-element'>Enter new tag details below to update tag.</p>
   <hr/>
   <p class ='page-element'>Please enter new details below:</p>
-  <form action='/tags/edit' method="post">
+  <form class='creator' action='/tags/edit' method="post">
     <label for='tag_id'>Tag ID:</label>
     <input id='tag_id' readonly type='text' name='id' value='<%=@edit_tag.id%>'/>
     <label for='tag_name'>Tag Name:</label>
@@ -14,4 +15,5 @@
     <input type='submit' value='Update Tag'/>
     <input type='reset' value='Clear'/>
  </form>
+</div>
 </div>
