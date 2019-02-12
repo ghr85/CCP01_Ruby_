@@ -21,6 +21,17 @@
 </select>
 <label for='year_int'>Input Year:</label>
 <input id='year_int' type='text' name='year' value='2019' maxlength='4' minlength = '4'/>
+<label for='column-select'>Sort by:</label>
+<select id='column-select' name='column'>
+  <option value='tag_name_str'>Tag Name</option>
+  <option value='budget_num'>Budget</option>
+  <option value='budget_num'>Amount Spent</option>
+</select>
+<label for='order-select'>Order:</label>
+<select id='order-select' name='order'>
+  <option value='ASC'>Ascending</option>
+  <option value='DESC'>Descending</option>
+</select>
 <input type="submit" value="Show Monthly Tag Analysis" />
 </form>
 
