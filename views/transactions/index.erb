@@ -4,7 +4,7 @@
   <h2 class ='page-intent'>Overview</h2>
   <p class ='page-element'>Transactions for review</p>
 </div>
-</p id='sum-value'><b> Total for All Transactions: £<%=Transaction.sum%></b></p>
+
 
 <form action="/transactions" method="get">
   <label for='column-select'>Sort by:</label>
@@ -38,14 +38,20 @@
  <td value='<%=transaction.tag_id_int%>'><a href='/tags/<%=transaction.tag_id_int%>/transactions'><%=transaction.tag.tag_name_str%></a></td>
  <td value='<%=transaction.amount_num%>'>£<%=transaction.amount_num%></td>
  <td value='edit'><form action="/transactions/<%=transaction.id%>/edit" method="get">
-   <input type="submit" value="Edit" />
+   <input type="image" src="images/edit_icon.png" border="0" alt="submit" style="width:20px;" />
 </form></td>
  <td value='delete'>
    <form action="/transactions/<%=transaction.id%>/delete" method="post">
-     <input type="submit" value="Delete" />
+     <input type="image" src="images/delete_icon.png" border="0" alt="delete" style="width:20px;" />
   </form>
 </td>
 <%end%>
 </tr>
+<tfoot>
+  <tr>
+       <th scope="row" colspan="6"></p id='sum-value'><b> Total for All Transactions: £<%=Transaction.sum%></b></p></th>
+     </tr>
+
+</tfoot>
 </table>
 </div>

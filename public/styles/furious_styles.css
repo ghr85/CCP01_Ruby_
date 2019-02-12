@@ -133,7 +133,7 @@ li a:visited{
 
 
 /* Homepage Styling */
-/* Content Page Styling*/
+/* Content Page Structure*/
 #content-page .wrapper-content{
   display: grid;
   grid-template-columns: 20% 20% 20% 20% 20%;
@@ -159,8 +159,9 @@ li a:visited{
   margin top: 10px;
   margin-left: 5px;
 }
+/* table styling below */
 #content-page table{
-
+background-color: white;
 }
 
 #content-page tr:nth-child(odd){
@@ -169,10 +170,27 @@ li a:visited{
 #content-page tr:nth-child(even) {
   background-color: rgb(247, 200, 120);
 }
+#content-page th{
+  background-color: #de700b;
+  border-top-left-radius: 10px;
+  border-top-right-radius:10px;
+  padding-top: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+  padding-bottom: 2px;
+}
 #content-page td {
+  color:black;
   text-align: center;
-  padding: 2px ;
+  padding: 5px ;
   border: 0px ;
   margin: 0px ;
 
 }
+#content-page td a:hover {
+  color:yellow;
+  text-align: center;
+
+
+}
+/* Table Styling above */

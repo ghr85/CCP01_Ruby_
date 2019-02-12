@@ -24,11 +24,11 @@
    <td value='<%=merchant.merchant_name_str%>'><a href='/merchants/<%=merchant.id%>/transactions'><%=merchant.merchant_name_str%></a></td>
 
    <td value='edit'><form action="/merchants/<%=merchant.id%>/edit" method="get">
-     <input type="submit" value="Edit" />
+     <input type="image" src="images/edit_icon.png" border="0" alt="submit" style="width:20px;" />
   </form></td>
    <td value='delete'>
      <form action="/merchants/<%=merchant.id%>/delete" method="post">
-       <input type="submit" value="Delete" />
+       <input type="image" src="images/delete_icon.png" border="0" alt="delete" style="width:20px;" />
     </form>
 <%end%>
 </tr>
