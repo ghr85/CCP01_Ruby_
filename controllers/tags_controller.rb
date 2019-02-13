@@ -14,24 +14,7 @@ require_relative('../models/tag.rb')
 also_reload('../models/*')
 
 get '/tags' do #retrieves the overall list of tag
-  tags = Tag.all
-  case params[:column]
-  when 'budget_num'
-    if params[:order] == 'ASC'
-      @tags = tags.sort_by{|tag| tag.budget_num.to_i}
-    else
-     @tags = tags.sort_by{|tag| tag.budget_num.to_i}.reverse
-   end
-
-  when 'tag_name_str'
-    if params[:order] == 'ASC'
-    @tags = tags.sort_by{|tag| tag.tag_name_str}
-  else
-    @tags = tags.sort_by{|tag| tag.tag_name_str}.reverse
-  end
-  when nil
-  @tags = tags
-  end
+  @tags = Tag.in_order(params[:column],params[:order])
   erb ( :"tags/index" )
 end
 
@@ -40,8 +23,7 @@ get '/tags/new' do #retrieves the new form for creating tag
 end
 
 post '/tags' do #submits data from new tag page to DB
-  tag = Tag.new(params)
-  tag.save
+  tag = Tag.new(params).save
   redirect to("/tags")
 end
 

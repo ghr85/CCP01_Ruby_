@@ -33,7 +33,7 @@ class Tag
 
       sql = "UPDATE tags SET
       (
-        tag_name_str,budget_num,id
+        tag_name_str,budget_num
       )
       =
       (
@@ -94,6 +94,28 @@ class Tag
       tag_hash = results.first
       tag = Tag.new(tag_hash)
       return tag
+    end
+
+    def self.in_order(column = 'tag_name_str',order = 'ASC')
+      tags = Tag.all
+      case column
+      when 'budget_num'
+        if order == 'ASC'
+          sort = tags.sort_by{|tag| tag.budget_num.to_i}
+        else
+          sort = tags.sort_by{|tag| tag.budget_num.to_i}.reverse
+        end
+
+      when 'tag_name_str'
+        if order == 'ASC'
+          sort = tags.sort_by{|tag| tag.tag_name_str}
+        else
+          sort = tags.sort_by{|tag| tag.tag_name_str}.reverse
+        end
+      when nil
+        sort = tags
+      end
+      return sort
     end
 
 
