@@ -4,7 +4,6 @@
   <h2 class ='page-intent'>Transactions with <%=@merchant.merchant_name_str%> </h2>
   <p class ='page-element'></p>
 
-</p id='sum-value'><b>Amount spent:<%=@sum%></b></p>
 <table class='table-data'>
   <tr class='header'>
     <th>Date</th>
@@ -30,6 +29,10 @@
 </td>
 <%end%>
 </tr>
+<tr>
+  <th scope="row" colspan="6"><b>Amount spent:<%=@sum%></b></th>
+  </tr>
+</tfoot>
 </table>
 </div>
 </div>

@@ -22,7 +22,16 @@ border: 0px;
 margin: 0px;
 }
 .head-contain{
-  display: inline-flex;
+  display: flex;
+  justify-content:  space-between;
+}
+.left-contain {
+  display: flex;
+justify-content:  flex-start;
+}
+.right-contain {
+  display: flex;
+  justify-content: flex-end;
 }
 header img{
   height: 40px;
@@ -33,6 +42,7 @@ header img{
 header a:visited{
   color: #de700b;
 }
+
 
 /* header styling */
 

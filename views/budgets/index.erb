@@ -64,7 +64,11 @@
    <% @month_total_int += budget.total.to_f %>
 <%end%>
 </tr>
+<tr>
+  <th scope="row" colspan="5">Total Spent in <%=@month%> : £<%="%.2f" % @month_total_int%></b></th>
+  </tr>
+</tfoot>
 </table>
-<p class ='page-element'>Total Spent This Month: £<%="%.2f" % @month_total_int%></p>
+<p class ='page-element'></p>
 </div>
 </div>
