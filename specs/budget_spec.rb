@@ -13,6 +13,7 @@ require_relative('../models/budget.rb')
 
 class TestBudget < MiniTest::Test
 
+def setup
 
 
 def test_analysis
@@ -20,5 +21,6 @@ def test_analysis
   binding.pry
   nil
 end
+
 
 end #class end

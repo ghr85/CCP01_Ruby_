@@ -9,10 +9,10 @@
     <label for='transaction_id'>Transaction ID:</label>
     <input id='transaction_id' readonly type='text' name='id' value='<%=@edit_transaction.id%>'/>
     <label for='trans_date'>Date:</label>
-    <input id='trans_date' type='date' name='trans_date' value='<%=@edit_transaction.trans_date%>'/>
+    <input id='trans_date' type='date' name='trans_date' value='<%=@edit_transaction.trans_date%>' min="2017-01-01" required/>
     <label for='transaction_amount'>Transaction Amount:</label>
-    <input id='transaction_amount' type='text' name='amount_num' value='<%=@edit_transaction.amount_num%>'/>
-    <label for='merchant-select'>Select a merchant:</label>
+    <input id='transaction_amount' type='number' name='amount_num' value='<%=@edit_transaction.amount_num%>' required/>
+    <label for='merchant-select'>Merchant:</label>
     <select id='merchant-select' name='merchant_id_int'>
       <%@merchants.each do |merchant|%>
       <option value='<%=merchant.id%>'><%=merchant.merchant_name_str%></option>

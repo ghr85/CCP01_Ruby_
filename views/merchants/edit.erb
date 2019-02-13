@@ -10,7 +10,7 @@
     <label for='merchant_id'>Merchant ID:</label>
     <input id='merchant_id' readonly type='text' name='id' value='<%=@edit_merchant.id%>'/>
     <label for='merchant_name'>Merchant Name:</label>
-    <input id='merchant_name' type='text' name='merchant_name_str' value='<%=@edit_merchant.merchant_name_str%>'/>
+    <input id='merchant_name' type='text' name='merchant_name_str' value='<%=@edit_merchant.merchant_name_str%>' required/>
     <input type='submit' value='Update Merchant'/>
     <input type='reset' value='Clear'/>
  </form>

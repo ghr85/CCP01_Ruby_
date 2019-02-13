@@ -6,17 +6,17 @@
 
   <form class ='creator' method='post' action='/transactions'>
     <label for='trans_date'>Date:</label>
-    <input id='trans_date' type='date' name='trans_date'/>
+    <input id='trans_date' type='date' name='trans_date' min="2019-01-01"  required/>
     <label for='amount'>Amount:</label>
-    <input id='amount' type='number' name='amount_num'step="any"/>
+    <input id='amount' type='number' name='amount_num' step="any" required/>
     <label for='merchant-select'>Select a merchant:</label>
-    <select id='merchant-select' name='merchant_id_int'>
+    <select id='merchant-select' name='merchant_id_int' >
       <%@merchants.each do |merchant|%>
      <option value='<%=merchant.id%>'><%=merchant.merchant_name_str%></option>
  <%end%>
     </select>
     <label for='tag-select'>Select a tag:</label>
-    <select id='tag-select' name='tag_id_int'>
+    <select id='tag-select' name='tag_id_int' >
       <%@tags.each do |tag|%>
      <option value='<%=tag.id%>'><%=tag.tag_name_str%></option>
  <%end%>
