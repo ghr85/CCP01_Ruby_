@@ -100,14 +100,46 @@ class Transaction
 
     def self.sum
       all_transaction = Transaction.all()
-      # binding.pry
       sum = 0.00
       for transaction in all_transaction
         sum += transaction.amount_num.to_f
       end
-      return "%.2f" % sum #Format float to 2 decimal places after comma
+      return "%.2f" % sum
     end
 
+    def self.in_order(column = 'trans_date',order = 'ASC')
+      transactions = Transaction.all()
+      case column
+      when 'amount_num'
+        if order == 'ASC'
+          sorted = transactions.sort_by{|transaction| transaction.amount_num.to_i}
+        else
+         sorted = transactions.sort_by{|transaction| transaction.amount_num.to_i}.reverse
+       end
+
+      when 'trans_date'
+        if order == 'ASC'
+        sorted = transactions.sort_by{|transaction| transaction.trans_date}
+      else
+        sorted = transactions.sort_by{|transaction| transaction.trans_date}.reverse
+      end
+      when 'merchant_name_str'
+          if order == 'ASC'
+        sorted = transactions.sort_by{|transaction| transaction.merchant.merchant_name_str}
+      else
+        sorted = transactions.sort_by{|transaction| transaction.merchant.merchant_name_str}.reverse
+      end
+      when 'tag_name_str'
+        if order == 'ASC'
+        sorted = transactions.sort_by{|transaction| transaction.tag.tag_name_str}
+      else
+        sorted = transactions.sort_by{|transaction| transaction.tag.tag_name_str}.reverse
+      end
+      when nil
+      sorted = transactions
+      end
+      return sorted
+    end
 
 
   end #class end

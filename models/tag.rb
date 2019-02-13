@@ -101,21 +101,21 @@ class Tag
       case column
       when 'budget_num'
         if order == 'ASC'
-          sort = tags.sort_by{|tag| tag.budget_num.to_i}
+          sorted = tags.sort_by{|tag| tag.budget_num.to_i}
         else
-          sort = tags.sort_by{|tag| tag.budget_num.to_i}.reverse
+          sorted = tags.sort_by{|tag| tag.budget_num.to_i}.reverse
         end
 
       when 'tag_name_str'
         if order == 'ASC'
-          sort = tags.sort_by{|tag| tag.tag_name_str}
+          sorted = tags.sort_by{|tag| tag.tag_name_str}
         else
-          sort = tags.sort_by{|tag| tag.tag_name_str}.reverse
+          sorted = tags.sort_by{|tag| tag.tag_name_str}.reverse
         end
       when nil
-        sort = tags
+        return tags
       end
-      return sort
+      return sorted
     end
 
 

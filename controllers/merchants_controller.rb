@@ -8,7 +8,7 @@ require('sinatra/contrib/all')
 require('pry-byebug')
 
 #require components
-require_relative('../models/tag.rb')
+require_relative('../models/merchant.rb')
 also_reload('../models/*')
 
 get '/merchants' do #retrieves all merchants in specified order

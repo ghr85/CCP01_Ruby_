@@ -11,7 +11,7 @@
     <label for='trans_date'>Date:</label>
     <input id='trans_date' type='date' name='trans_date' value='<%=@edit_transaction.trans_date%>' min="2017-01-01" required/>
     <label for='transaction_amount'>Transaction Amount:</label>
-    <input id='transaction_amount' type='number' name='amount_num' value='<%=@edit_transaction.amount_num%>' required/>
+    <input id='transaction_amount' type='number' name='amount_num' value='<%=@edit_transaction.amount_num%>'required step='any'/>
     <label for='merchant-select'>Merchant:</label>
     <select id='merchant-select' name='merchant_id_int'>
       <%@merchants.each do |merchant|%>

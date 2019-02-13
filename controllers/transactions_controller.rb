@@ -14,67 +14,36 @@ require_relative('../models/tag.rb')
 also_reload('../models/*')
 
 
-get '/transactions' do
-  transactions = Transaction.all()
-  case params[:column]
-  when 'amount_num'
-    if params[:order] == 'ASC'
-      @transactions = transactions.sort_by{|transaction| transaction.amount_num.to_i}
-    else
-     @transactions = transactions.sort_by{|transaction| transaction.amount_num.to_i}.reverse 
-   end
-
-  when 'trans_date'
-    if params[:order] == 'ASC'
-    @transactions = transactions.sort_by{|transaction| transaction.trans_date}
-  else
-    @transactions = transactions.sort_by{|transaction| transaction.trans_date}.reverse
-  end
-  when 'merchant_name_str'
-      if params[:order] == 'ASC'
-    @transactions = transactions.sort_by{|transaction| transaction.merchant.merchant_name_str}
-  else
-    @transactions = transactions.sort_by{|transaction| transaction.merchant.merchant_name_str}
-  end
-  when 'tag_name_str'
-    if params[:order] == 'ASC'
-    @transactions = transactions.sort_by{|transaction| transaction.tag.tag_name_str}
-  else
-    @transactions = transactions.sort_by{|transaction| transaction.tag.tag_name_str}
-  end
-  when nil
-  @transactions = transactions
-  end
+get '/transactions' do #retrieves all transactions
+  @transactions = Transaction.in_order(params[:column],params[:order])
   erb ( :"transactions/index" )
 end
 
-get '/transactions/new' do #retrieves the new form for creating transaction
+get '/transactions/new' do #retrieves the form for creating new transaction
   @transactions = Transaction.all
   @merchants = Merchant.all
   @tags = Tag.all
   erb(:"transactions/new")
 end
 
-post '/transactions' do #submits data from new transaction page to DB
-  transaction = Transaction.new(params)
-  transaction.save
-  redirect to("/transactions")
-end
-
-post '/transactions/:id/delete' do #Deletes singular instance from database
-  Transaction.delete(params[:id])
-  redirect to("/transactions")
-end
-
-get '/transactions/:id/edit' do #Edit singular instance from database
+get '/transactions/:id/edit' do #get edit transaction form
     @merchants = Merchant.all
     @tags = Tag.all
     @edit_transaction = Transaction.find(params[:id])
     erb(:"transactions/edit")
 end
 
+post '/transactions' do #submits data from new transaction page to DB
+  transaction = Transaction.new(params).save()
+  redirect to("/transactions")
+end
+
+post '/transactions/:id/delete' do #Deletes singular transaction from database
+  Transaction.delete(params[:id])
+  redirect to("/transactions")
+end
+
 post '/transactions/edit' do #Edits singular instance from database
-  transaction = Transaction.new(params)
-  transaction.update()
-  redirect to("/transactions") #redirects to route above ^
+  transaction = Transaction.new(params).update()
+  redirect to("/transactions")
 end
