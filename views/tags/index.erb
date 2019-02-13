@@ -2,7 +2,7 @@
 
   <h1 class ='page-title'>Tags</h1>
   <h2 class ='page-intent'>Overview</h2>
-  
+
 
 
   <form class='sorter' action="/tags" method="get">
@@ -26,7 +26,9 @@
     <th></th>
     <th></th>
   </tr>
+  <%@budget_sum = 0 %>
   <%for tag in @tags%>
+  <%@budget_sum += tag.budget_num.to_i%>
   <tr>
  <td value='<%=tag.tag_name_str%>'><a href='/tags/<%=tag.id%>/transactions'><%=tag.tag_name_str%></a></td>
  <td value='<%=tag.budget_num%>'><a href='/tags/<%=tag.id%>/transactions'>£<%=tag.budget_num%></a></td>
@@ -42,7 +44,7 @@
 </tr>
 <tfoot>
   <tr>
-    <th scope="row" colspan="4"><b> Total for All Transactions: £_BUDGET_SUM</b></th>
+    <th scope="row" colspan="4"><b> Total Monthly Budget: £<%=@budget_sum%></b></th>
     </tr>
   </tfoot>
 </table>
