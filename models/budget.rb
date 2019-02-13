@@ -27,10 +27,37 @@ class Budget
 
   end
 
-def find_id
-  sql = 'SELECT id FROM tags WHERE tag_name_str = $1'
-  values = [@tag_name_str]
-  results = SqlRunner.run(sql,values).first
-  return results['id']
-end
+  def find_id
+    sql = 'SELECT id FROM tags WHERE tag_name_str = $1'
+    values = [@tag_name_str]
+    results = SqlRunner.run(sql,values).first
+    return results['id']
+  end
+
+
+  def self.in_order(month = '12', year = '2018',column = 'budget_num',order = 'ASC')
+    budgets = Budget.analysis(month,year)
+    case column
+    when 'budget_num'
+      if order == 'ASC'
+        sorted = budgets.sort_by{|budget| budget.budget_num.to_i}
+      else
+        sorted = budgets.sort_by{|budget| budget.budget_num.to_i}.reverse
+      end
+    when 'tag_name_str'
+      if order == 'ASC'
+        sorted = budgets.sort_by{|budget| budget.tag_name_str}
+      else
+        sorted = budgets.sort_by{|budget| budget.tag_name_str}.reverse
+      end
+    when 'total'
+      if order == 'ASC'
+        sorted = budgets.sort_by{|budget| budget.total}
+      else
+        sorted = budgets.sort_by{|budget| budget.total}.reverse
+      end
+    when nil
+      sorted = budgets
+    end
+  end
 end #class end
