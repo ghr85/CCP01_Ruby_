@@ -33,7 +33,7 @@ class Tag
 
       sql = "UPDATE tags SET
       (
-        tag_name_str,budget_num
+        tag_name_str,budget_num,id
       )
       =
       (
