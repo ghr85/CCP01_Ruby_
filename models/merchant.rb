@@ -93,5 +93,18 @@ class Merchant
       return merchant
     end
 
+    def self.in_order(order = 'ASC')
+      merchants = Merchant.all()
+      case order
+      when 'ASC'
+      sorted = merchants.sort_by{|merchant| merchant.merchant_name_str}
+      when 'DESC'
+      sorted = merchants.sort_by{|merchant| merchant.merchant_name_str}.reverse
+      when nil
+      return merchants
+      end
+      return sorted
+    end
+
 
   end #class end

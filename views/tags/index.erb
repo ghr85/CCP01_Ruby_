@@ -1,10 +1,6 @@
 <div id='content-page'>
-
   <h1 class ='page-title'>Tags</h1>
   <h2 class ='page-intent'>Overview</h2>
-
-
-
   <form class='sorter' action="/tags" method="get">
     <label for='column-select'>Sort by:</label>
     <select id='column-select' name='column'>
@@ -18,38 +14,33 @@
     </select>
     <input type="submit" value="Sort" />
   </form>
-
   <table class='table-data'>
-  <tr class='header'>
-    <th>Tag Name</th>
-    <th>Budget</th>
-    <th></th>
-    <th></th>
-  </tr>
-  <%@budget_sum = 0 %>
-  <%for tag in @tags%>
-  <%@budget_sum += tag.budget_num.to_i%>
-  <tr>
- <td value='<%=tag.tag_name_str%>'><a href='/tags/<%=tag.id%>/transactions'><%=tag.tag_name_str%></a></td>
- <td value='<%=tag.budget_num%>'><a href='/tags/<%=tag.id%>/transactions'>£<%=tag.budget_num%></a></td>
- <td value='edit'><form action="/tags/<%=tag.id%>/edit" method="get">
-   <input type="image" src="images/edit_icon.png" border="0" alt="submit" style="width:20px;" />
-</form></td>
- <td value='delete'>
-   <form action="/tags/<%=tag.id%>/delete" method="post">
-     <input type="image" src="images/delete_icon.png" border="0" alt="delete" style="width:20px;" />
-  </form>
-</td>
-<%end%>
-</tr>
-<tfoot>
-  <tr>
-    <th scope="row" colspan="4"><b> Total Monthly Budget: £<%=@budget_sum%></b></th>
+    <tr class='header'>
+      <th>Tag Name</th>
+      <th>Budget</th>
+      <th></th>
+      <th></th>
     </tr>
-  </tfoot>
-</table>
+    <%@budget_sum = 0 %>
+    <%for tag in @tags%>
+    <%@budget_sum += tag.budget_num.to_f%>
+    <tr>
+      <td value='<%=tag.tag_name_str%>'><a href='/tags/<%=tag.id%>/transactions'><%=tag.tag_name_str%></a></td>
+      <td value='<%=tag.budget_num%>'><a href='/tags/<%=tag.id%>/transactions'>£<%=tag.budget_num%></a></td>
+      <td value='edit'><form action="/tags/<%=tag.id%>/edit" method="get">
+        <input type="image" src="images/edit_icon.png" border="0" alt="submit" style="width:20px;" />
+      </form></td>
+      <td value='delete'>
+        <form action="/tags/<%=tag.id%>/delete" method="post">
+          <input type="image" src="images/delete_icon.png" border="0" alt="delete" style="width:20px;" />
+        </form>
+      </td>
+      <%end%>
+    </tr>
+    <tfoot>
+      <tr>
+        <th scope="row" colspan="4"><b> Total Monthly Budget: £<%=@budget_sum%></b></th>
+      </tr>
+    </tfoot>
+  </table>
 </div>
-</div>
-
-<!-- <input type="image" id="image" alt="Login"
-       src="/media/examples/login-button.png"> Keep this for later-->
