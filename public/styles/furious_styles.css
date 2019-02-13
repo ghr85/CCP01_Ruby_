@@ -7,6 +7,7 @@
 
 body{
   font-family: 'Cabin', sans-serif;
+
 }
 
 a {
@@ -100,6 +101,7 @@ li a:visited{
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
+
 }
 
 /* Begin grid by creating wrapper class */
@@ -144,7 +146,8 @@ li a:visited{
 
 /* Homepage Styling */
 /* Content Page Structure*/
-#content-page .wrapper-content{
+/* set this to ..page-content to fix */
+#content-page {
   display: grid;
   grid-template-columns: 20% 20% 20% 20% 20%;
   grid-template-rows: 20% 20% 20% 20% 20%;
@@ -154,7 +157,7 @@ li a:visited{
 #content-page .page-title{
   font-size: 48pt;
   grid-column-start: 1;
-  grid-column-end: 3;
+  grid-column-end: 4;
   grid-row-start: 1;
   grid-row-end: 2;
   margin top: 10px;
@@ -162,16 +165,44 @@ li a:visited{
 }
 #content-page .page-intent{
   font-size: 24pt;
-  grid-column-start: 1;
-  grid-column-end: 3;
-  grid-row-start: 1;
-  grid-row-end: 2;
+  grid-column-start: 2;
+  grid-column-end: 6;
+  grid-row-start: 2;
+  grid-row-end: 3;
   margin top: 10px;
-  margin-left: 5px;
+  margin-left: 10px;
+}
+#content-page .page-element{
+  font-size: 12pt;
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 4;
+  grid-row-end: 5;
+  text-align: justify;
+  word-wrap: normal;
+  margin-left: 10px;
 }
 /* table styling below */
+
+#content-page .sorter{
+  grid-column-start: 3;
+  grid-column-end: 7;
+  grid-row-start: 2;
+
+}
+
+#content-page .budget-sorter{
+  grid-column-start: 2;
+  grid-column-end: 7;
+  grid-row-start: 3;
+
+}
+
 #content-page table{
 background-color: white;
+grid-column-start: 2;
+grid-column-end: 5;
+grid-row-start: 4;
 }
 
 #content-page tr:nth-child(odd){
@@ -200,7 +231,7 @@ background-color: white;
 #content-page td a:hover {
   color:rgb(252, 229, 74);
   text-align: center;
-
-
 }
+
+
 /* Table Styling above */

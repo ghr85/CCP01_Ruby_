@@ -1,12 +1,13 @@
 <div id='content-page'>
-<div class='page-content'>
+
   <h1 class ='page-title'> Transactions</h1>
   <h2 class ='page-intent'>Overview</h2>
-  <p class ='page-element'>Transactions for review</p>
-</div>
+  <p class ='page-element'>An overview of all your input transactions. Click on a merchant or tag to see further spending.</p>
+<p></p>
+<p></p>
 
 
-<form action="/transactions" method="get">
+<form class='sorter' action="/transactions" method="get">
   <label for='column-select'>Sort by:</label>
   <select id='column-select' name='column'>
     <option value='trans_date'>Transaction Date</option>
@@ -21,7 +22,7 @@
   </select>
   <input type="submit" value="Sort" />
 </form>
-<hr/>
+
 <table class='table-data'>
   <tr class='header'>
     <th>Date</th>

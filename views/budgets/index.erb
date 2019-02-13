@@ -1,10 +1,10 @@
 <div id='content-page'>
-<div class='page-content'>
+
   <h1 class ='page-title'>Monthly Analysis</h1>
   <h2 class ='page-intent'>Transaction totals by budget for <%=@month%>
    <%=@year if @year != 0%></h2>
   <p class ='page-element'></p>
-  <form action="/budgets" method="get">
+  <form class = 'budget-sorter' action="/budgets" method="get">
 <label for='month_int'>Select a month:</label>
 <select id='month_int' name='month'>
  <option value='1'>January</option>

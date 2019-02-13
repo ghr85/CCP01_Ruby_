@@ -1,10 +1,10 @@
 <div id='content-page'>
 
-<div class='page-content'>
+
   <h1 class ='page-title'>Merchants</h1>
   <h2 class ='page-intent'>Overview</h2>
   <p class ='page-element'>Merchants for review</p>
-  <form action="/merchants" method="get">
+  <form class ='sorter' action="/merchants" method="get">
     <label for='order-select'>Order:</label>
     <select id='order-select' name='order'>
       <option value='ASC'>Ascending</option>
@@ -12,7 +12,7 @@
     </select>
     <input type="submit" value="Sort" />
   </form>
-  <hr/>
+
   <table class='table-data'>
     <tr class='header'>
       <th>Merchant Name</th>

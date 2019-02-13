@@ -1,10 +1,10 @@
-<div id='content-page'>
-<div class='page-content'>
+
+
   <h1 class ='page-title'> Transactions</h1>
   <h2 class ='page-intent'>Create</h2>
-  <p class ='page-element'>Create Transaction</p>
-<hr/>
-  <form method='post' action='/transactions'>
+  <p class ='page-element'>Use this form to create a new transaction.</br> If need be create new merchants or tags first.</p>
+
+  <form class ='creator' method='post' action='/transactions'>
     <label for='trans_date'>Date:</label>
     <input id='trans_date' type='date' name='trans_date'/>
     <label for='amount'>Amount:</label>
@@ -24,6 +24,3 @@
     <input type='submit' value='Create Transaction'/>
     <input type='reset' value='Clear Form'/>
   </form>
-
-</div>
-</div>
