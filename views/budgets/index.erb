@@ -49,7 +49,7 @@
   <%for budget in @budgets%>
 
   <tr class='transaction_rows'>
-    <td value='tag_name'><%=budget.tag_name_str%></td>
+    <td value='tag_name'><a href='/tags/<%=budget.find_id%>/transactions'><%=budget.tag_name_str%></a></td>
  <td value='budget_value'>£<%=budget.budget_num%></td>
  <td value='tag_total'>£<%=budget.total%></a></td>
  <td value='warning'>

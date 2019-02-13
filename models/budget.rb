@@ -27,6 +27,10 @@ class Budget
 
   end
 
-
-
+def find_id
+  sql = 'SELECT id FROM tags WHERE tag_name_str = $1'
+  values = [@tag_name_str]
+  results = SqlRunner.run(sql,values).first
+  return results['id']
+end
 end #class end
