@@ -137,6 +137,7 @@ Users should be able to assign budgets to tags and if budget is neared or exceed
 **Acceptance Criteria** Site input/output formatting should be consistent?
 
 *As a user I want to use the service on across all my devices so that I can input transactions as they happen*
+
 **Acceptance Criteria** Site should have responsive layout.
 
 *As a user I want to upload more than one transaction at at time so that if I forget to log expenses it's not such a chore*
